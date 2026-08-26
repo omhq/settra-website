@@ -157,30 +157,10 @@ h1 {
   text-wrap: balance;
 }
 .hero-actions { margin-top: 2.25rem; display: flex; gap: .75rem; }
-.strengths {
-  margin: 2.5rem 0 0;
-  padding: 0;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: .8rem 1.6rem;
-  list-style: none;
-  font-size: .875rem;
-}
-.strengths li { display: inline-flex; align-items: center; gap: .5rem; }
-.strengths span { color: var(--primary); font-weight: 800; }
 
-.workflow-section, .process-section, .capabilities-section, .security-section { padding: 6.75rem 0; }
+.workflow-section, .capabilities-section, .security-section { padding: 6.75rem 0; }
 .workflow-section { background: color-mix(in oklab, var(--muted) 45%, transparent); }
 .section-header { max-width: 48rem; margin: 0 auto; text-align: center; }
-.eyebrow, .cta-eyebrow {
-  margin: 0 0 1.1rem;
-  color: var(--primary);
-  font-size: .72rem;
-  font-weight: 760;
-  letter-spacing: .14em;
-  text-transform: uppercase;
-}
 .section-header h2, .security-section h2, .cta-card h2 {
   margin: 0;
   font-size: clamp(2rem, 4.2vw, 3.2rem);
@@ -216,61 +196,22 @@ h1 {
 .workflow-item h3 { margin: 0; font-size: 1.05rem; letter-spacing: -.02em; }
 .workflow-item p { margin: .75rem 0 0; color: var(--muted-foreground); line-height: 1.75; }
 
-.process-section { scroll-margin-top: 1rem; border-bottom: 1px solid color-mix(in oklab, var(--border) 70%, transparent); }
-.pipeline {
-  max-width: 64rem;
-  margin: 3.25rem auto 0;
-  padding: 1rem;
-  display: grid;
-  grid-template-columns: 1fr auto 1fr auto 1fr auto 1fr;
-  align-items: center;
-  gap: .65rem;
-  border: 1px solid var(--border);
-  border-radius: 1.35rem;
-  background: var(--card);
-  box-shadow: 0 14px 44px color-mix(in oklab, var(--foreground) 5%, transparent);
-}
-.pipeline span {
-  min-height: 3.4rem;
-  display: grid;
-  place-items: center;
-  border-radius: .9rem;
-  background: color-mix(in oklab, var(--primary) 8%, var(--background));
-  color: var(--card-foreground);
-  font-size: .82rem;
-  font-weight: 720;
-  text-align: center;
-}
-.pipeline b { color: var(--primary); font-size: 1.15rem; }
-.steps-grid, .capabilities-grid {
+.capabilities-grid {
   max-width: 68rem;
   margin: 1.25rem auto 0;
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1rem;
 }
-.step-card, .capability-card {
+.capability-card {
   padding: 2rem;
   border: 1px solid var(--border);
   border-radius: 1.75rem;
   background: var(--card);
   box-shadow: 0 8px 24px color-mix(in oklab, var(--foreground) 3%, transparent);
 }
-.step-card { display: grid; grid-template-columns: auto minmax(0, 1fr); column-gap: 1rem; }
-.step-number {
-  width: 2.6rem;
-  height: 2.6rem;
-  grid-row: 1 / span 2;
-  display: grid;
-  place-items: center;
-  border-radius: .9rem;
-  background: color-mix(in oklab, var(--primary) 11%, var(--background));
-  color: var(--primary);
-  font-size: .72rem;
-  font-weight: 800;
-}
-.step-card h3, .capability-card h3 { margin: .05rem 0 0; font-size: 1.25rem; letter-spacing: -.025em; }
-.step-card p, .capability-card p { margin: .85rem 0 0; color: var(--muted-foreground); line-height: 1.75; }
+.capability-card h3 { margin: .05rem 0 0; font-size: 1.25rem; letter-spacing: -.025em; }
+.capability-card p { margin: .85rem 0 0; color: var(--muted-foreground); line-height: 1.75; }
 
 .capabilities-section { background: var(--section); }
 .capabilities-grid { margin-top: 3.5rem; }
@@ -291,7 +232,6 @@ h1 {
 
 .security-section { scroll-margin-top: 1rem; }
 .security-grid { max-width: 65rem; display: grid; grid-template-columns: .9fr 1.1fr; gap: 6rem; align-items: center; }
-.security-section .eyebrow { margin-bottom: 1rem; }
 .security-section h2 { max-width: 29rem; }
 .security-copy { margin-inline: 0; max-width: 32rem; }
 .text-link { margin-top: 1.5rem; display: inline-flex; gap: .45rem; color: var(--primary); font-size: .9rem; font-weight: 730; }
@@ -316,9 +256,8 @@ h1 {
   text-align: center;
   box-shadow: 0 24px 58px rgba(62, 55, 255, .22);
 }
-.cta-eyebrow { color: rgba(255,255,255,.78); }
 .cta-card h2 { max-width: 45rem; }
-.cta-card > p:not(.cta-eyebrow) { max-width: 41rem; margin: 1.35rem 0 0; color: rgba(255,255,255,.78); line-height: 1.8; }
+.cta-card > p { max-width: 41rem; margin: 1.35rem 0 0; color: rgba(255,255,255,.78); line-height: 1.8; }
 .cta-actions { margin-top: 2rem; display: flex; flex-direction: column; align-items: center; gap: 1rem; }
 .button-inverse { border-color: white; background: white; color: #171533; box-shadow: 0 10px 28px rgba(20, 16, 100, .2); }
 .button-inverse:hover { border-color: #f2f1ff; background: #f2f1ff; }
@@ -335,7 +274,7 @@ h1 {
 
 @media (max-width: 860px) {
   .primary-nav { display: none; }
-  .workflow-section, .process-section, .capabilities-section, .security-section { padding: 5.25rem 0; }
+  .workflow-section, .capabilities-section, .security-section { padding: 5.25rem 0; }
   .security-grid { grid-template-columns: 1fr; gap: 3rem; }
   .security-section h2, .security-copy { max-width: 38rem; }
 }
@@ -349,12 +288,10 @@ h1 {
   .hero { min-height: 40rem; padding-top: 8.75rem; padding-bottom: 5.5rem; }
   .hero-actions { width: 100%; flex-direction: column; }
   .hero-actions .button { width: 100%; }
-  .strengths { display: grid; justify-items: start; }
-  .workflow-grid, .steps-grid, .capabilities-grid { grid-template-columns: 1fr; }
+
+  .workflow-grid, .capabilities-grid { grid-template-columns: 1fr; }
   .workflow-grid { gap: 2.5rem; }
-  .pipeline { grid-template-columns: 1fr; }
-  .pipeline b { transform: rotate(90deg); text-align: center; }
-  .step-card, .capability-card { padding: 1.5rem; border-radius: 1.4rem; }
+  .capability-card { padding: 1.5rem; border-radius: 1.4rem; }
   .capability-card { min-height: 0; }
   .cta-card { width: calc(100% - 2rem); padding: 3.5rem 1.4rem; }
   .footer-inner { grid-template-columns: 1fr; align-items: start; }

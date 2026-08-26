@@ -38,12 +38,6 @@ function subscribeToTheme(callback: () => void) {
   };
 }
 
-const strengths = [
-  "Google Drive files",
-  "Durable PostgreSQL snapshots",
-  "Governed MCP access",
-];
-
 const workflows = [
   {
     prompt: "What needs attention?",
@@ -64,29 +58,6 @@ const workflows = [
     prompt: "What does this metric mean?",
     answer:
       "Reuse approved definitions like active customer or recognized revenue across later queries.",
-  },
-];
-
-const steps = [
-  {
-    number: "01",
-    title: "Select your files",
-    body: "Choose Google Sheets, CSV, Excel, or Parquet files from Drive. Settra requests access only to the files you select.",
-  },
-  {
-    number: "02",
-    title: "Create durable snapshots",
-    body: "Settra detects the file format, loads through dlt, and stages a complete replacement before swapping in the new PostgreSQL snapshot.",
-  },
-  {
-    number: "03",
-    title: "Define shared meaning",
-    body: "Give agents stable names, measures, dimensions, business definitions, and validation rules through a governed semantic layer.",
-  },
-  {
-    number: "04",
-    title: "Connect through MCP",
-    body: "Agents discover exact schemas, inspect bounded samples, and run structured queries without source credentials or unrestricted SQL.",
   },
 ];
 
@@ -141,9 +112,6 @@ export default function Home() {
 
         <div className="header-actions">
           <nav className="primary-nav" aria-label="Primary navigation">
-            <a className="nav-link" href="#how-it-works">
-              How it works
-            </a>
             <a className="nav-link" href="#security">
               Security
             </a>
@@ -206,21 +174,12 @@ export default function Home() {
                 View on GitHub
               </a>
             </div>
-            <ul className="strengths">
-              {strengths.map((strength) => (
-                <li key={strength}>
-                  <span aria-hidden="true">✓</span>
-                  {strength}
-                </li>
-              ))}
-            </ul>
           </div>
         </section>
 
         <section className="workflow-section" aria-labelledby="workflow-title">
           <div className="container">
             <header className="section-header">
-              <p className="eyebrow">Useful from the first question</p>
               <h2 id="workflow-title">Let agents work with the data you already run on.</h2>
               <p>
                 Replace brittle file-reading workflows with a stable data layer
@@ -240,43 +199,9 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="process-section" id="how-it-works" aria-labelledby="process-title">
-          <div className="container">
-            <header className="section-header">
-              <p className="eyebrow">How it works</p>
-              <h2 id="process-title">From living files to dependable agent context.</h2>
-              <p>
-                Settra keeps the source workflow familiar while adding the
-                durability, structure, and guardrails agents need.
-              </p>
-            </header>
-
-            <div className="pipeline" aria-label="Settra data flow">
-              <span>Drive files</span>
-              <b aria-hidden="true">→</b>
-              <span>PostgreSQL</span>
-              <b aria-hidden="true">→</b>
-              <span>Semantic layer</span>
-              <b aria-hidden="true">→</b>
-              <span>AI agents</span>
-            </div>
-
-            <div className="steps-grid">
-              {steps.map((step) => (
-                <article className="step-card" key={step.number}>
-                  <span className="step-number">{step.number}</span>
-                  <h3>{step.title}</h3>
-                  <p>{step.body}</p>
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
-
         <section className="capabilities-section" aria-labelledby="capabilities-title">
           <div className="container">
             <header className="section-header">
-              <p className="eyebrow">Built for repeatable work</p>
               <h2 id="capabilities-title">A durable layer between files and agents.</h2>
               <p>
                 Give agents enough access to be useful without handing over raw
@@ -301,7 +226,6 @@ export default function Home() {
         <section className="security-section" id="security" aria-labelledby="security-title">
           <div className="container security-grid">
             <div>
-              <p className="eyebrow">Control stays with you</p>
               <h2 id="security-title">Run it where your data belongs.</h2>
               <p className="security-copy">
                 Self-host Settra inside infrastructure you control, or use a
@@ -337,7 +261,6 @@ export default function Home() {
 
         <section className="cta-section">
           <div className="container cta-card">
-            <p className="cta-eyebrow">Bring your first file</p>
             <h2>Give your agents data that holds up.</h2>
             <p>
               Start with the operational files your team already trusts. Settra
@@ -371,7 +294,6 @@ export default function Home() {
             <p>Durable data for AI agents.</p>
           </div>
           <nav aria-label="Footer navigation">
-            <a href="#how-it-works">How it works</a>
             <a href="#security">Security</a>
             <a href={GITHUB_URL} target="_blank" rel="noreferrer">GitHub</a>
             <a href={`${APP_URL}/login`}>Sign in</a>

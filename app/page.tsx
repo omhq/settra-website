@@ -207,15 +207,9 @@ export default function Home() {
           </div>
         </section>
 
-        <section
-          className="capabilities-section"
-          aria-labelledby="capabilities-title"
-        >
+        <section className="capabilities-section">
           <div className="container">
             <header className="section-header">
-              <h2 id="capabilities-title">
-                A durable layer between files and agents.
-              </h2>
               <p>
                 Give agents enough access to be useful without handing over raw
                 source credentials, unrestricted SQL, or inconsistent

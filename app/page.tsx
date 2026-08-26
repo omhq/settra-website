@@ -85,7 +85,11 @@ const capabilities = [
 ];
 
 export default function Home() {
-  const dark = useSyncExternalStore(subscribeToTheme, readDarkMode, () => false);
+  const dark = useSyncExternalStore(
+    subscribeToTheme,
+    readDarkMode,
+    () => false,
+  );
 
   function toggleTheme() {
     const next = !dark;
@@ -180,7 +184,9 @@ export default function Home() {
         <section className="workflow-section" aria-labelledby="workflow-title">
           <div className="container">
             <header className="section-header">
-              <h2 id="workflow-title">Let agents work with the data you already run on.</h2>
+              <h2 id="workflow-title">
+                Let agents work with the data you already run on.
+              </h2>
               <p>
                 Replace brittle file-reading workflows with a stable data layer
                 that automated agents can discover and query repeatedly.
@@ -190,7 +196,9 @@ export default function Home() {
             <div className="workflow-grid">
               {workflows.map((workflow) => (
                 <article className="workflow-item" key={workflow.prompt}>
-                  <span className="quote-mark" aria-hidden="true">“</span>
+                  <span className="quote-mark" aria-hidden="true">
+                    “
+                  </span>
                   <h3>{workflow.prompt}</h3>
                   <p>{workflow.answer}</p>
                 </article>
@@ -199,13 +207,19 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="capabilities-section" aria-labelledby="capabilities-title">
+        <section
+          className="capabilities-section"
+          aria-labelledby="capabilities-title"
+        >
           <div className="container">
             <header className="section-header">
-              <h2 id="capabilities-title">A durable layer between files and agents.</h2>
+              <h2 id="capabilities-title">
+                A durable layer between files and agents.
+              </h2>
               <p>
                 Give agents enough access to be useful without handing over raw
-                source credentials, unrestricted SQL, or inconsistent definitions.
+                source credentials, unrestricted SQL, or inconsistent
+                definitions.
               </p>
             </header>
 
@@ -223,7 +237,11 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="security-section" id="security" aria-labelledby="security-title">
+        <section
+          className="security-section"
+          id="security"
+          aria-labelledby="security-title"
+        >
           <div className="container security-grid">
             <div>
               <h2 id="security-title">Run it where your data belongs.</h2>
@@ -245,15 +263,33 @@ export default function Home() {
             <ul className="security-list">
               <li>
                 <span aria-hidden="true">✓</span>
-                <div><strong>Workspace isolation</strong><p>Connections, collections, semantics, grants, and metrics stay scoped to their workspace.</p></div>
+                <div>
+                  <strong>Workspace isolation</strong>
+                  <p>
+                    Connections, collections, semantics, grants, and metrics
+                    stay scoped to their workspace.
+                  </p>
+                </div>
               </li>
               <li>
                 <span aria-hidden="true">✓</span>
-                <div><strong>Encrypted authorization</strong><p>Google OAuth refresh tokens are encrypted per workspace with deployment-held key material.</p></div>
+                <div>
+                  <strong>Encrypted authorization</strong>
+                  <p>
+                    Google OAuth refresh tokens are encrypted per workspace with
+                    deployment-held key material.
+                  </p>
+                </div>
               </li>
               <li>
                 <span aria-hidden="true">✓</span>
-                <div><strong>Privacy-safe history</strong><p>MCP request and response contents are not stored; only operational usage metrics are retained.</p></div>
+                <div>
+                  <strong>Privacy-safe history</strong>
+                  <p>
+                    MCP request and response contents are not stored; only
+                    operational usage metrics are retained.
+                  </p>
+                </div>
               </li>
             </ul>
           </div>
@@ -295,10 +331,14 @@ export default function Home() {
           </div>
           <nav aria-label="Footer navigation">
             <a href="#security">Security</a>
-            <a href={GITHUB_URL} target="_blank" rel="noreferrer">GitHub</a>
+            <a href={GITHUB_URL} target="_blank" rel="noreferrer">
+              GitHub
+            </a>
             <a href={`${APP_URL}/login`}>Sign in</a>
           </nav>
-          <p className="copyright">© {new Date().getFullYear()} Settra. Apache 2.0.</p>
+          <p className="copyright">
+            © {new Date().getFullYear()} Settra. Apache 2.0.
+          </p>
         </div>
       </footer>
     </div>

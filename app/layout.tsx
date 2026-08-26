@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     template: "%s | Settra",
   },
   description:
-    "Turn Google Drive files into durable PostgreSQL snapshots and give AI agents governed access through MCP.",
+    "Connect Google Sheets, Excel, and CSV data once, then query it from Codex, ChatGPT, Claude, or custom agents through MCP.",
   alternates: { canonical: "/" },
   icons: { icon: "/favicon.png" },
   openGraph: {
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     siteName: "Settra",
     title: "Settra — Durable data for AI agents",
     description:
-      "Turn Google Drive files into durable PostgreSQL snapshots and give AI agents governed access through MCP.",
+      "Connect Google Sheets, Excel, and CSV data once, then query it from Codex, ChatGPT, Claude, or custom agents through MCP.",
     images: [
       {
         url: "/og.png",
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Settra — Durable data for AI agents",
     description:
-      "Turn Google Drive files into durable PostgreSQL snapshots and give AI agents governed access through MCP.",
+      "Connect Google Sheets, Excel, and CSV data once, then query it from Codex, ChatGPT, Claude, or custom agents through MCP.",
     images: ["/og.png"],
   },
 };

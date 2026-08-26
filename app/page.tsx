@@ -43,22 +43,22 @@ const workflows = [
   {
     prompt: "What needs attention?",
     answer:
-      "Find overdue items in an operations tracker and return the rows that need follow-up.",
+      "Ask an agent to find overdue items in a tracker and return the rows that need follow-up.",
   },
   {
     prompt: "How are we tracking?",
     answer:
-      "Summarize this month’s sales pipeline and compare actual values with targets.",
+      "Compare this month’s sales pipeline with targets without uploading the spreadsheet again.",
   },
   {
     prompt: "What changed?",
     answer:
-      "Identify changed rows without asking an agent to understand a fragile source file every time.",
+      "Let an automation check the latest rows whenever it runs through the same MCP connection.",
   },
   {
     prompt: "What does this metric mean?",
     answer:
-      "Reuse approved definitions like active customer or recognized revenue across later queries.",
+      "Keep shared definitions like active customer or recognized revenue consistent across every agent.",
   },
 ];
 
@@ -137,11 +137,11 @@ export default function Home() {
               Open source under Apache 2.0
               <span aria-hidden="true">→</span>
             </a>
-            <h1>Turn operational files into data your agents can trust.</h1>
+            <h1>Connect your spreadsheets once. Query them from any agent.</h1>
             <p className="hero-copy">
-              Settra syncs Google Sheets, CSV, Excel, and Parquet files into
-              durable PostgreSQL snapshots—then gives AI agents governed access
-              through MCP.
+              Settra keeps Google Sheets, Excel, and CSV data ready for Codex,
+              ChatGPT, Claude, and custom agents to query through MCP—without
+              uploading the same files again and again.
             </p>
             <div className="hero-actions">
               <a className="button" href={`${APP_URL}/register`}>
@@ -163,11 +163,12 @@ export default function Home() {
           <div className="container">
             <header className="section-header">
               <h2 id="workflow-title">
-                Let agents work with the data you already run on.
+                Give every agent the same spreadsheet data.
               </h2>
               <p>
-                Replace brittle file-reading workflows with a stable data layer
-                that automated agents can discover and query repeatedly.
+                Connect a source once. Settra keeps it ready to query, so agents
+                and automations can find rows, compare numbers, and answer
+                repeat questions whenever they run.
               </p>
             </header>
 
@@ -192,11 +193,13 @@ export default function Home() {
         >
           <div className="container security-grid">
             <div>
-              <h2 id="security-title">Run it where your data belongs.</h2>
+              <h2 id="security-title">
+                Use managed storage—or bring your own database.
+              </h2>
               <p className="security-copy">
-                Self-host Settra inside infrastructure you control, or use a
-                managed deployment when you want the operational work handled
-                for you.
+                Start quickly with Settra-managed PostgreSQL, or connect your
+                own PostgreSQL database when you want full control over where
+                staged data lives.
               </p>
               <a
                 className="text-link"
@@ -212,30 +215,30 @@ export default function Home() {
               <li>
                 <span aria-hidden="true">✓</span>
                 <div>
-                  <strong>Workspace isolation</strong>
+                  <strong>Separate workspaces</strong>
                   <p>
-                    Connections, collections, semantics, grants, and metrics
-                    stay scoped to their workspace.
+                    Each workspace keeps its connections, agent access, and
+                    usage separate.
                   </p>
                 </div>
               </li>
               <li>
                 <span aria-hidden="true">✓</span>
                 <div>
-                  <strong>Encrypted authorization</strong>
+                  <strong>Secure Google access</strong>
                   <p>
-                    Google OAuth refresh tokens are encrypted per workspace with
-                    deployment-held key material.
+                    Google connection tokens are encrypted and stay inside the
+                    Settra deployment you choose.
                   </p>
                 </div>
               </li>
               <li>
                 <span aria-hidden="true">✓</span>
                 <div>
-                  <strong>Privacy-safe history</strong>
+                  <strong>Private query history</strong>
                   <p>
-                    MCP request and response contents are not stored; only
-                    operational usage metrics are retained.
+                    Settra records usage metrics, not the questions your agents
+                    ask or the answers they receive.
                   </p>
                 </div>
               </li>
@@ -245,10 +248,10 @@ export default function Home() {
 
         <section className="cta-section">
           <div className="container cta-card">
-            <h2>Give your agents data that holds up.</h2>
+            <h2>Stop uploading the same spreadsheet.</h2>
             <p>
-              Start with the operational files your team already trusts. Settra
-              turns them into durable, governed context for automated work.
+              Connect your data once, then let Codex, ChatGPT, Claude, and
+              custom agents query it whenever they need it.
             </p>
             <div className="cta-actions">
               <a className="button button-inverse" href={`${APP_URL}/register`}>

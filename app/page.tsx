@@ -5,6 +5,7 @@
 import { useSyncExternalStore } from "react";
 
 const APP_URL = "https://app.settra.io";
+const SITE_URL = "https://www.settra.io";
 const GITHUB_URL = "https://github.com/omhq/settra";
 const THEME_KEY = "settra-site-theme";
 const THEME_EVENT = "settra-site-theme-change";
@@ -78,7 +79,7 @@ export default function Home() {
   return (
     <div className="site-shell">
       <header className="site-header">
-        <a className="wordmark" href="#top" aria-label="Settra home">
+        <a className="wordmark" href={`${SITE_URL}`} aria-label="Settra home">
           <img
             className="logo logo-light"
             src="/settra-logo-light.png"

@@ -134,18 +134,17 @@ export default function Home() {
               <span className="spark" aria-hidden="true">
                 ✦
               </span>
-              Open source under Apache 2.0
+              Open source
               <span aria-hidden="true">→</span>
             </a>
-            <h1>Connect your spreadsheets once. Query them from any agent.</h1>
+            <h1>Query your sheet data from any agent.</h1>
             <p className="hero-copy">
               Settra keeps Google Sheets, Excel, and CSV data ready for Codex,
-              ChatGPT, Claude, and custom agents to query through MCP—without
-              uploading the same files again and again.
+              ChatGPT, Claude, and custom agents.
             </p>
             <div className="hero-actions">
               <a className="button" href={`${APP_URL}/register`}>
-                Start using Settra <span aria-hidden="true">→</span>
+                Get started <span aria-hidden="true">→</span>
               </a>
               <a
                 className="button button-outline"
@@ -194,10 +193,10 @@ export default function Home() {
           <div className="container security-grid">
             <div>
               <h2 id="security-title">
-                Use managed storage—or bring your own database.
+                Use managed storage, or bring your own database.
               </h2>
               <p className="security-copy">
-                Start quickly with Settra-managed PostgreSQL, or connect your
+                Start quickly with Settra managed PostgreSQL, or connect your
                 own PostgreSQL database when you want full control over where
                 staged data lives.
               </p>
@@ -248,7 +247,7 @@ export default function Home() {
 
         <section className="cta-section">
           <div className="container cta-card">
-            <h2>Stop uploading the same spreadsheet.</h2>
+            <h2>Stop wasting time.</h2>
             <p>
               Connect your data once, then let Codex, ChatGPT, Claude, and
               custom agents query it whenever they need it.

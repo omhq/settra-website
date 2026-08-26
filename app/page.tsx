@@ -61,29 +61,6 @@ const workflows = [
   },
 ];
 
-const capabilities = [
-  {
-    icon: "↻",
-    title: "Reliable by construction",
-    body: "The last successful snapshot stays available while a new one is staged, so a failed refresh does not strand your workflows.",
-  },
-  {
-    icon: "⌘",
-    title: "Focused agent context",
-    body: "Collections group related data into clear workspaces. Each agent loads the right context once and queries only what belongs there.",
-  },
-  {
-    icon: "◇",
-    title: "Governed semantics",
-    body: "Approved measures and business definitions replace one-off interpretations, making repeated questions far more consistent.",
-  },
-  {
-    icon: "◎",
-    title: "Private by default",
-    body: "Connections, semantic assets, MCP grants, and request metrics are isolated by workspace. Request and response contents are not stored.",
-  },
-];
-
 export default function Home() {
   const dark = useSyncExternalStore(
     subscribeToTheme,
@@ -201,30 +178,6 @@ export default function Home() {
                   </span>
                   <h3>{workflow.prompt}</h3>
                   <p>{workflow.answer}</p>
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section className="capabilities-section">
-          <div className="container">
-            <header className="section-header">
-              <p>
-                Give agents enough access to be useful without handing over raw
-                source credentials, unrestricted SQL, or inconsistent
-                definitions.
-              </p>
-            </header>
-
-            <div className="capabilities-grid">
-              {capabilities.map((capability) => (
-                <article className="capability-card" key={capability.title}>
-                  <span className="capability-icon" aria-hidden="true">
-                    {capability.icon}
-                  </span>
-                  <h3>{capability.title}</h3>
-                  <p>{capability.body}</p>
                 </article>
               ))}
             </div>

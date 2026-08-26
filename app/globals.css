@@ -12,7 +12,6 @@
   --primary-foreground: oklch(1 0 0);
   --border: oklch(0.922 0 0);
   --accent: oklch(0.97 0 0);
-  --section: oklch(0.985 0 0);
   --brand-surface: #144bc6;
   --outline-background: var(--background);
   --outline-hover: var(--muted);
@@ -30,7 +29,6 @@
   --primary-foreground: oklch(0.282 0.091 267.935);
   --border: oklch(1 0 0 / 10%);
   --accent: oklch(0.269 0 0);
-  --section: oklch(0.205 0 0);
   --brand-surface: #176be7;
   --outline-background: oklch(1 0 0 / 4.5%);
   --outline-hover: oklch(1 0 0 / 7.5%);
@@ -254,7 +252,6 @@ h1 {
 }
 
 .workflow-section,
-.capabilities-section,
 .security-section {
   padding: 6.75rem 0;
 }
@@ -313,59 +310,6 @@ h1 {
   margin: 0.75rem 0 0;
   color: var(--muted-foreground);
   line-height: 1.75;
-}
-
-.capabilities-grid {
-  max-width: 68rem;
-  margin: 1.25rem auto 0;
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1rem;
-}
-.capability-card {
-  padding: 2rem;
-  border: 1px solid var(--border);
-  border-radius: 1.75rem;
-  background: var(--card);
-  box-shadow: 0 8px 24px color-mix(in oklab, var(--foreground) 3%, transparent);
-}
-.capability-card h3 {
-  margin: 0.05rem 0 0;
-  font-size: 1.25rem;
-  letter-spacing: -0.025em;
-}
-.capability-card p {
-  margin: 0.85rem 0 0;
-  color: var(--muted-foreground);
-  line-height: 1.75;
-}
-
-.capabilities-section {
-  background: var(--section);
-}
-.capabilities-grid {
-  margin-top: 3.5rem;
-}
-.capability-card {
-  min-height: 16.5rem;
-  padding: 2.2rem;
-  display: flex;
-  flex-direction: column;
-}
-.capability-icon {
-  width: 2.8rem;
-  height: 2.8rem;
-  margin-bottom: 1.15rem;
-  display: grid;
-  place-items: center;
-  border-radius: 0.95rem;
-  background: color-mix(in oklab, var(--primary) 11%, var(--background));
-  color: var(--primary);
-  font-size: 1.25rem;
-  font-weight: 760;
-}
-.capability-card p {
-  margin-top: 1rem;
 }
 
 .security-section {
@@ -527,7 +471,6 @@ h1 {
     display: none;
   }
   .workflow-section,
-  .capabilities-section,
   .security-section {
     padding: 5.25rem 0;
   }
@@ -571,19 +514,11 @@ h1 {
     width: 100%;
   }
 
-  .workflow-grid,
-  .capabilities-grid {
+  .workflow-grid {
     grid-template-columns: 1fr;
   }
   .workflow-grid {
     gap: 2.5rem;
-  }
-  .capability-card {
-    padding: 1.5rem;
-    border-radius: 1.4rem;
-  }
-  .capability-card {
-    min-height: 0;
   }
   .cta-card {
     width: calc(100% - 2rem);

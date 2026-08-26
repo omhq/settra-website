@@ -1,33 +1,39 @@
 @import "tailwindcss";
 
 :root {
-  --background: oklch(0.995 0.002 255);
-  --foreground: oklch(0.18 0.035 266);
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.2 0.035 266);
-  --muted: oklch(0.965 0.013 254);
-  --muted-foreground: oklch(0.52 0.04 258);
-  --primary: #3e37ff;
-  --primary-hover: #302ae5;
-  --primary-foreground: #ffffff;
-  --border: oklch(0.9 0.018 255);
-  --accent: oklch(0.957 0.021 254);
-  --section: oklch(0.976 0.011 254);
+  --card-foreground: oklch(0.145 0 0);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --primary: oklch(0.488 0.243 264.376);
+  --primary-hover: oklch(0.488 0.243 264.376 / 80%);
+  --primary-foreground: oklch(1 0 0);
+  --border: oklch(0.922 0 0);
+  --accent: oklch(0.97 0 0);
+  --section: oklch(0.985 0 0);
+  --brand-surface: #144bc6;
+  --outline-background: var(--background);
+  --outline-hover: var(--muted);
 }
 
 .dark {
-  --background: oklch(0.155 0.034 264);
-  --foreground: oklch(0.94 0.014 255);
-  --card: oklch(0.195 0.038 265);
-  --card-foreground: oklch(0.94 0.014 255);
-  --muted: oklch(0.225 0.038 264);
-  --muted-foreground: oklch(0.72 0.04 256);
-  --primary: #7773ff;
-  --primary-hover: #8c88ff;
-  --primary-foreground: oklch(0.15 0.034 264);
-  --border: oklch(1 0 0 / 12%);
-  --accent: oklch(0.255 0.045 263);
-  --section: oklch(0.17 0.037 264);
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.205 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --primary: oklch(0.707 0.165 254.624);
+  --primary-hover: oklch(0.707 0.165 254.624 / 80%);
+  --primary-foreground: oklch(0.282 0.091 267.935);
+  --border: oklch(1 0 0 / 10%);
+  --accent: oklch(0.269 0 0);
+  --section: oklch(0.205 0 0);
+  --brand-surface: #176be7;
+  --outline-background: oklch(1 0 0 / 4.5%);
+  --outline-hover: oklch(1 0 0 / 7.5%);
 }
 
 * { box-sizing: border-box; }
@@ -57,7 +63,7 @@ button { font: inherit; }
   align-items: center;
 }
 .wordmark { display: inline-flex; align-items: center; }
-.logo { width: auto; height: 1.75rem; object-fit: contain; }
+.logo { width: auto; height: 1.25rem; object-fit: contain; }
 .logo-dark { display: none; }
 .dark .logo-light { display: none; }
 .dark .logo-dark { display: block; }
@@ -93,8 +99,8 @@ button { font: inherit; }
 .button {
   min-height: 3rem;
   padding: .8rem 1.3rem;
-  border: 1px solid var(--primary);
-  border-radius: .875rem;
+  border: 1px solid transparent;
+  border-radius: .5rem;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -102,14 +108,14 @@ button { font: inherit; }
   background: var(--primary);
   color: var(--primary-foreground);
   font-size: .9rem;
-  font-weight: 720;
-  box-shadow: 0 10px 28px color-mix(in oklab, var(--primary) 18%, transparent);
-  transition: transform .2s, background .2s, border-color .2s;
+  font-weight: 500;
+  box-shadow: none;
+  transition: background-color .2s, border-color .2s, color .2s;
 }
-.button:hover { transform: translateY(-1px); background: var(--primary-hover); border-color: var(--primary-hover); }
-.button-small { min-height: 2.55rem; padding: .65rem 1rem; border-radius: .75rem; box-shadow: none; }
-.button-outline { background: transparent; color: var(--foreground); border-color: var(--border); box-shadow: none; }
-.button-outline:hover { background: var(--accent); border-color: var(--border); }
+.button:hover { background: var(--primary-hover); border-color: transparent; }
+.button-small { min-height: 2rem; padding: .4rem .75rem; border-radius: .5rem; box-shadow: none; }
+.button-outline { background: var(--outline-background); color: var(--foreground); border-color: var(--border); box-shadow: none; }
+.button-outline:hover { background: var(--outline-hover); border-color: var(--border); }
 
 .hero {
   min-height: 44rem;
@@ -117,11 +123,7 @@ button { font: inherit; }
   border-bottom: 1px solid color-mix(in oklab, var(--border) 65%, transparent);
   background: var(--background);
 }
-.dark .hero {
-  background:
-    radial-gradient(ellipse 70% 58% at 50% 0%, color-mix(in oklab, var(--primary) 13%, transparent), transparent 70%),
-    linear-gradient(to bottom, color-mix(in oklab, var(--primary) 3%, var(--background)), var(--background));
-}
+.dark .hero { background: var(--background); }
 .hero-inner { display: flex; flex-direction: column; align-items: center; text-align: center; }
 .announcement {
   margin-bottom: 1.75rem;
@@ -251,22 +253,22 @@ h1 {
   flex-direction: column;
   align-items: center;
   border-radius: 2rem;
-  background: #3e37ff;
+  background: var(--brand-surface);
   color: white;
   text-align: center;
-  box-shadow: 0 24px 58px rgba(62, 55, 255, .22);
+  box-shadow: 0 24px 58px color-mix(in oklab, var(--brand-surface) 24%, transparent);
 }
 .cta-card h2 { max-width: 45rem; }
 .cta-card > p { max-width: 41rem; margin: 1.35rem 0 0; color: rgba(255,255,255,.78); line-height: 1.8; }
 .cta-actions { margin-top: 2rem; display: flex; flex-direction: column; align-items: center; gap: 1rem; }
-.button-inverse { border-color: white; background: white; color: #171533; box-shadow: 0 10px 28px rgba(20, 16, 100, .2); }
-.button-inverse:hover { border-color: #f2f1ff; background: #f2f1ff; }
+.button-inverse { border-color: white; background: white; color: oklch(0.145 0 0); box-shadow: none; }
+.button-inverse:hover { border-color: oklch(0.97 0 0); background: oklch(0.97 0 0); }
 .cta-login { color: rgba(255,255,255,.82); font-size: .82rem; font-weight: 620; }
 .cta-login:hover { color: white; }
 
 .site-footer { border-top: 1px solid var(--border); padding: 3.25rem 0; }
 .footer-inner { display: grid; grid-template-columns: 1fr auto; gap: 2rem; align-items: end; color: var(--muted-foreground); font-size: .82rem; }
-.footer-logo { height: 1.35rem; }
+.footer-logo { height: 1.25rem; }
 .footer-inner > div > p { margin: .7rem 0 0; }
 .footer-inner nav { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 1.5rem; }
 .footer-inner nav a:hover { color: var(--foreground); }
@@ -282,7 +284,7 @@ h1 {
 @media (max-width: 680px) {
   .container { width: min(100% - 2rem, 72rem); }
   .site-header { min-height: 4.5rem; padding-inline: 1rem; }
-  .logo { height: 1.5rem; }
+  .logo { height: 1.25rem; }
   .sign-in-link { padding-inline: .55rem; }
   .button-small { display: none; }
   .hero { min-height: 40rem; padding-top: 8.75rem; padding-bottom: 5.5rem; }

@@ -3,9 +3,9 @@
 /* eslint-disable @next/next/no-img-element -- vinext's current next/image shim breaks client hydration. */
 
 import { useSyncExternalStore } from "react";
+import Link from "next/link";
 
 const APP_URL = "https://app.settra.io";
-const SITE_URL = "https://www.settra.io";
 const GITHUB_URL = "https://github.com/omhq/settra";
 const THEME_KEY = "settra-site-theme";
 const THEME_EVENT = "settra-site-theme-change";
@@ -79,18 +79,22 @@ export default function Home() {
   return (
     <div className="site-shell">
       <header className="site-header">
-        <a className="wordmark" href={`${SITE_URL}`} aria-label="Settra home">
+        <Link className="wordmark" href="/" aria-label="Settra home">
           <img
             className="logo logo-light"
             src="/settra-logo-light.png"
             alt="Settra"
+            width="568"
+            height="160"
           />
           <img
             className="logo logo-dark"
             src="/settra-logo-dark.png"
             alt="Settra"
+            width="568"
+            height="160"
           />
-        </a>
+        </Link>
 
         <div className="header-actions">
           <nav className="primary-nav" aria-label="Primary navigation">
@@ -271,11 +275,15 @@ export default function Home() {
               className="logo footer-logo logo-light"
               src="/settra-logo-light.png"
               alt="Settra"
+              width="568"
+              height="160"
             />
             <img
               className="logo footer-logo logo-dark"
               src="/settra-logo-dark.png"
               alt="Settra"
+              width="568"
+              height="160"
             />
             <p>Durable data for AI agents.</p>
           </div>

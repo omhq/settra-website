@@ -11,6 +11,29 @@ export const metadata: Metadata = {
   description:
     "How Settra accesses, uses, stores, shares, and deletes personal information and Google user data.",
   alternates: { canonical: "/privacy" },
+  openGraph: {
+    type: "website",
+    url: "/privacy",
+    siteName: "Settra",
+    title: "Privacy Policy | Settra",
+    description:
+      "How Settra accesses, uses, stores, shares, and deletes personal information and Google user data.",
+    images: [
+      {
+        url: "/og.png",
+        width: 1200,
+        height: 630,
+        alt: "Settra — durable spreadsheet data for AI agents",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Privacy Policy | Settra",
+    description:
+      "How Settra accesses, uses, stores, shares, and deletes personal information and Google user data.",
+    images: ["/og.png"],
+  },
 };
 
 export default function PrivacyPage() {

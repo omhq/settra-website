@@ -7,6 +7,27 @@ export const metadata: Metadata = {
   title: "Terms of Service",
   description: "The terms that apply when you use Settra.",
   alternates: { canonical: "/terms" },
+  openGraph: {
+    type: "website",
+    url: "/terms",
+    siteName: "Settra",
+    title: "Terms of Service | Settra",
+    description: "The terms that apply when you use Settra.",
+    images: [
+      {
+        url: "/og.png",
+        width: 1200,
+        height: 630,
+        alt: "Settra — durable spreadsheet data for AI agents",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Terms of Service | Settra",
+    description: "The terms that apply when you use Settra.",
+    images: ["/og.png"],
+  },
 };
 
 export default function TermsPage() {

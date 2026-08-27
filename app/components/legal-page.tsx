@@ -21,11 +21,15 @@ export function LegalPage({ title, description, children }: LegalPageProps) {
             className="logo logo-light"
             src="/settra-logo-light.png"
             alt="Settra"
+            width="568"
+            height="160"
           />
           <img
             className="logo logo-dark"
             src="/settra-logo-dark.png"
             alt="Settra"
+            width="568"
+            height="160"
           />
         </Link>
 
@@ -60,11 +64,15 @@ export function LegalPage({ title, description, children }: LegalPageProps) {
               className="logo footer-logo logo-light"
               src="/settra-logo-light.png"
               alt="Settra"
+              width="568"
+              height="160"
             />
             <img
               className="logo footer-logo logo-dark"
               src="/settra-logo-dark.png"
               alt="Settra"
+              width="568"
+              height="160"
             />
             <p>Durable data for AI agents.</p>
           </div>

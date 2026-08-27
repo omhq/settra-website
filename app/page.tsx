@@ -284,6 +284,8 @@ export default function Home() {
             <a href={GITHUB_URL} target="_blank" rel="noreferrer">
               GitHub
             </a>
+            <a href="/privacy">Privacy</a>
+            <a href="/terms">Terms</a>
             <a href={`${APP_URL}/login`}>Sign in</a>
           </nav>
           <p className="copyright">

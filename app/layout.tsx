@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 const SITE_URL = "https://www.settra.io";
+const GOOGLE_TAG_ID = "G-6JDD6KVW4W";
 const TITLE = "Settra: Query Google Sheets & Excel with AI Agents";
 const DESCRIPTION =
   "Connect Google Sheets, Excel, and CSV files once. Let Codex, ChatGPT, Claude, and custom AI agents query reliable spreadsheet data through MCP.";
@@ -108,6 +109,20 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+        <script
+          async
+          src={`https://www.googletagmanager.com/gtag/js?id=${GOOGLE_TAG_ID}`}
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', '${GOOGLE_TAG_ID}');
+            `,
+          }}
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

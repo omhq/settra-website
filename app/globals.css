@@ -522,6 +522,10 @@ h1 {
   margin: 1rem 0 0;
   padding-left: 1.35rem;
 }
+.legal-document ol {
+  margin: 1rem 0 0;
+  padding-left: 1.35rem;
+}
 .legal-document li + li {
   margin-top: 0.75rem;
 }
@@ -556,6 +560,31 @@ h1 {
   margin: 0;
   color: var(--foreground);
   font-weight: 620;
+}
+.document-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-top: 1.4rem;
+}
+.legal-document .document-actions .button {
+  color: var(--primary-foreground);
+  text-decoration: none;
+}
+.legal-document .document-actions .button-outline {
+  color: var(--foreground);
+}
+.document-code {
+  display: block;
+  overflow-wrap: anywhere;
+  margin-top: 1rem;
+  padding: 0.8rem 0.9rem;
+  border: 1px solid var(--border);
+  border-radius: 0.6rem;
+  background: var(--muted);
+  color: var(--foreground);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.84rem;
 }
 
 @media (max-width: 860px) {

@@ -98,6 +98,9 @@ export default function Home() {
 
         <div className="header-actions">
           <nav className="primary-nav" aria-label="Primary navigation">
+            <a className="nav-link" href="/connect">
+              Connect
+            </a>
             <a className="nav-link" href="#security">
               Security
             </a>
@@ -289,6 +292,8 @@ export default function Home() {
           </div>
           <nav aria-label="Footer navigation">
             <a href="#security">Security</a>
+            <a href="/connect">Connect</a>
+            <a href="/support">Support</a>
             <a href={GITHUB_URL} target="_blank" rel="noreferrer">
               GitHub
             </a>

@@ -9,10 +9,16 @@ const SUPPORT_EMAIL = "support@outermeasure.com";
 type LegalPageProps = {
   title: string;
   description: string;
+  dateLabel?: string | null;
   children: ReactNode;
 };
 
-export function LegalPage({ title, description, children }: LegalPageProps) {
+export function LegalPage({
+  title,
+  description,
+  dateLabel = "Effective August 27, 2026",
+  children,
+}: LegalPageProps) {
   return (
     <div className="site-shell legal-shell">
       <header className="site-header legal-site-header">
@@ -51,7 +57,7 @@ export function LegalPage({ title, description, children }: LegalPageProps) {
           <header className="legal-title">
             <h1>{title}</h1>
             <p>{description}</p>
-            <p className="legal-date">Effective August 27, 2026</p>
+            {dateLabel && <p className="legal-date">{dateLabel}</p>}
           </header>
           {children}
         </article>
@@ -77,9 +83,11 @@ export function LegalPage({ title, description, children }: LegalPageProps) {
             <p>Durable data for AI agents.</p>
           </div>
           <nav aria-label="Legal navigation">
+            <a href="/connect">Connect</a>
+            <a href="/support">Support</a>
             <a href="/privacy">Privacy</a>
             <a href="/terms">Terms</a>
-            <a href={"mailto:" + SUPPORT_EMAIL}>Contact</a>
+            <a href={"mailto:" + SUPPORT_EMAIL}>Email</a>
           </nav>
           <p className="copyright">
             © {new Date().getFullYear()} Settra. Apache 2.0.

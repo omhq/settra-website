@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="wash" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#f5f8ff"/>
+    </linearGradient>
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M48 0H0V48" fill="none" stroke="#dfe7f5" stroke-width="1"/>
+    </pattern>
+    <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="12" stdDeviation="14" flood-color="#164fc9" flood-opacity=".12"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#wash)"/>
+  <rect width="1200" height="630" fill="url(#grid)" opacity=".58"/>
+  <circle cx="985" cy="104" r="280" fill="#2463eb" opacity=".06"/>
+  <circle cx="1110" cy="570" r="250" fill="#2463eb" opacity=".05"/>
+
+  <image href="settra-logo-light.png" x="70" y="66" width="238" height="67"/>
+
+  <text x="70" y="257" fill="#171717" font-family="Inter, Arial, sans-serif" font-size="68" font-weight="750" letter-spacing="-3">
+    Agent-native data apps.
+  </text>
+  <text x="72" y="314" fill="#667085" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="500">
+    Build once with AI. Get reliable mini BI reports anywhere.
+  </text>
+
+  <g fill="none" stroke="#2463eb" stroke-width="2" opacity=".38">
+    <path d="M98 468H283C346 468 354 412 418 412H518" stroke-dasharray="5 9"/>
+    <path d="M638 412H765C829 412 842 374 904 374H1070" stroke-dasharray="5 9"/>
+    <path d="M638 432H778C838 432 846 498 918 498H1083" stroke-dasharray="5 9"/>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="70" y="424" width="128" height="88" rx="16" fill="#fff" stroke="#d8e1f1"/>
+    <path d="M70 453h128M112 424v88M155 424v88" fill="none" stroke="#2463eb" stroke-opacity=".42"/>
+
+    <rect x="370" y="372" width="102" height="80" rx="18" fill="#fff" stroke="#d8e1f1"/>
+    <circle cx="400" cy="400" r="6" fill="#2463eb"/>
+    <circle cx="442" cy="400" r="6" fill="#2463eb"/>
+    <circle cx="421" cy="428" r="6" fill="#2463eb"/>
+    <path d="M404 404l13 19M438 404l-13 19" fill="none" stroke="#2463eb" stroke-opacity=".55"/>
+
+    <g>
+      <path d="M576 350l66 36-66 36-66-36z" fill="#dce8ff" stroke="#2463eb" stroke-opacity=".55"/>
+      <path d="M510 386l66 36v74l-66-37z" fill="#f0f5ff" stroke="#2463eb" stroke-opacity=".45"/>
+      <path d="M642 386l-66 36v74l66-37z" fill="#e7efff" stroke="#2463eb" stroke-opacity=".45"/>
+    </g>
+
+    <rect x="876" y="338" width="96" height="72" rx="36" fill="#fff" stroke="#d8e1f1"/>
+    <circle cx="924" cy="360" r="6" fill="#2463eb"/>
+    <circle cx="904" cy="386" r="6" fill="#2463eb"/>
+    <circle cx="944" cy="386" r="6" fill="#2463eb"/>
+    <path d="M920 365l-12 16M928 365l12 16" fill="none" stroke="#2463eb" stroke-opacity=".55"/>
+
+    <rect x="890" y="464" width="96" height="72" rx="18" fill="#fff" stroke="#d8e1f1"/>
+    <path d="M918 511v-17M938 511v-31M958 511v-23" fill="none" stroke="#2463eb" stroke-width="4" stroke-linecap="round"/>
+  </g>
+
+  <text x="70" y="582" fill="#2463eb" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="700" letter-spacing="2">
+    SPREADSHEETS  ·  BUILD WITH AI  ·  DATA APPS  ·  REPORTS
+  </text>
+</svg>

@@ -3,9 +3,9 @@ import "./globals.css";
 
 const SITE_URL = "https://www.settra.io";
 const GOOGLE_TAG_ID = "G-6JDD6KVW4W";
-const TITLE = "Settra: Query Google Sheets & Excel with AI Agents";
+const TITLE = "Settra: Agent-Native Data Apps";
 const DESCRIPTION =
-  "Connect Google Sheets, Excel, and CSV files once. Let Codex, ChatGPT, Claude, and custom AI agents query reliable spreadsheet data through MCP.";
+  "Build reusable data Apps with AI, prevent agent guesswork, handle schema drift, and deliver mini BI reports in chat or on a schedule.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -20,6 +20,15 @@ export const metadata: Metadata = {
   creator: "Settra",
   publisher: "Settra",
   category: "technology",
+  keywords: [
+    "agent-native data apps",
+    "AI agents",
+    "MCP server",
+    "Google Sheets",
+    "mini BI reports",
+    "spreadsheet automation",
+    "scheduled reports",
+  ],
   robots: {
     index: true,
     follow: true,
@@ -44,7 +53,7 @@ export const metadata: Metadata = {
         url: "/og.png",
         width: 1200,
         height: 630,
-        alt: "Settra — durable spreadsheet data for AI agents",
+        alt: "Settra — agent-native data apps",
       },
     ],
   },
@@ -82,6 +91,7 @@ const structuredData = {
       name: "Settra",
       url: SITE_URL,
       applicationCategory: "BusinessApplication",
+      applicationSubCategory: "Agent-native data application platform",
       operatingSystem: "Web",
       description: DESCRIPTION,
       license: "https://www.apache.org/licenses/LICENSE-2.0",

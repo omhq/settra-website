@@ -9,7 +9,7 @@ const CLAUDE_INSTALL_URL =
 export const metadata: Metadata = {
   title: "Connect Settra",
   description:
-    "Connect Settra to Claude, ChatGPT, Codex, or another MCP client.",
+    "Connect Settra agent-native data apps to Claude, ChatGPT, Codex, or another MCP client.",
   alternates: { canonical: "/connect" },
   openGraph: {
     type: "website",
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     siteName: "Settra",
     title: "Connect Settra to your AI assistant",
     description:
-      "Authorize your Settra workspace in Claude, ChatGPT, Codex, or another MCP client.",
+      "Authorize your Settra workspace so an AI assistant can discover, build, and run your data Apps.",
     images: [{ url: "/og.png", width: 1200, height: 630, alt: "Settra" }],
   },
 };
@@ -26,7 +26,7 @@ export default function ConnectPage() {
   return (
     <LegalPage
       title="Connect Settra"
-      description="Authorize your Settra workspace in Claude, ChatGPT, Codex, or another MCP client."
+      description="Authorize your workspace so Claude, ChatGPT, Codex, or another MCP client can discover, build, and run your data Apps."
       dateLabel={null}
     >
       <section>
@@ -110,9 +110,9 @@ export default function ConnectPage() {
         <h2>Verify the connection</h2>
         <p>Start a new conversation and try these prompts in order:</p>
         <ol>
-          <li>“List the collections available in Settra.”</li>
-          <li>“Open the first collection and summarize its cubes.”</li>
-          <li>“Query one cube for five rows.”</li>
+          <li>“List the Apps available in Settra.”</li>
+          <li>“Open the first App and explain what it helps me do.”</li>
+          <li>“Run the App and show me the mini report.”</li>
         </ol>
         <p>
           Settra records privacy-safe request metrics, not the contents of your

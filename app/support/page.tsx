@@ -23,7 +23,7 @@ export default function SupportPage() {
   return (
     <LegalPage
       title="Settra Support"
-      description="Help with accounts, Google Drive syncs, semantic models, and AI connections."
+      description="Help with accounts, Google Drive syncs, data Apps, and AI connections."
       dateLabel={null}
     >
       <section>

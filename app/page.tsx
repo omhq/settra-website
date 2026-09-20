@@ -4,6 +4,7 @@
 
 import { useSyncExternalStore } from "react";
 import Link from "next/link";
+import { AgentNativeBackdrop } from "./components/agent-native-backdrop";
 
 const APP_URL = "https://app.settra.io";
 const GITHUB_URL = "https://github.com/omhq/settra";
@@ -41,24 +42,24 @@ function subscribeToTheme(callback: () => void) {
 
 const workflows = [
   {
-    prompt: "What needs attention?",
+    prompt: "Build with AI",
     answer:
-      "Ask an agent to find overdue items in a tracker and return the rows that need follow-up.",
+      "Describe the App you need and let AI do the heavy lifting, turning spreadsheet data into something useful in minutes.",
   },
   {
-    prompt: "How are we tracking?",
+    prompt: "Build once, reuse everywhere",
     answer:
-      "Compare this month’s sales pipeline with targets without uploading the spreadsheet again.",
+      "Use the same App in chat, on a schedule, or in Settra instead of rebuilding the same report for every workflow.",
   },
   {
-    prompt: "What changed?",
+    prompt: "Trust every answer",
     answer:
-      "Let an automation check the latest rows whenever it runs through the same MCP connection.",
+      "Your business rules stay with the App, so agents use the right data and calculations instead of guessing or hallucinating.",
   },
   {
-    prompt: "What does this metric mean?",
+    prompt: "Stay ahead of schema drift",
     answer:
-      "Keep shared definitions like active customer or recognized revenue consistent across every agent.",
+      "See which Apps a spreadsheet change will affect before a renamed, removed, or changed column breaks them.",
   },
 ];
 
@@ -101,8 +102,8 @@ export default function Home() {
             <a className="nav-link" href="/connect">
               Connect
             </a>
-            <a className="nav-link" href="#security">
-              Security
+            <a className="nav-link" href="#why-settra">
+              Why Settra
             </a>
             <a
               className="nav-link"
@@ -131,6 +132,7 @@ export default function Home() {
 
       <main id="top">
         <section className="hero">
+          <AgentNativeBackdrop />
           <div className="container hero-inner">
             <a
               className="announcement"
@@ -141,17 +143,17 @@ export default function Home() {
               <span className="spark" aria-hidden="true">
                 ✦
               </span>
-              Open source
+              Open source · Agent-native
               <span aria-hidden="true">→</span>
             </a>
-            <h1>Query your sheet data from any agent.</h1>
+            <h1>Build agent‑native data apps.</h1>
             <p className="hero-copy">
-              Settra keeps Google Sheets, Excel, and CSV data ready for Codex,
-              ChatGPT, Claude, and custom agents.
+              Turn spreadsheet data into reliable mini BI reports with AI. Build
+              once, then use the same App in chat, on a schedule, or in Settra.
             </p>
             <div className="hero-actions">
               <a className="button" href={`${APP_URL}/register`}>
-                Get started <span aria-hidden="true">→</span>
+                Start building <span aria-hidden="true">→</span>
               </a>
               <a
                 className="button button-outline"
@@ -169,20 +171,19 @@ export default function Home() {
           <div className="container">
             <header className="section-header">
               <h2 id="workflow-title">
-                Give every agent the same spreadsheet data.
+                Build once. Get reliable answers everywhere.
               </h2>
               <p>
-                Connect a source once. Settra keeps it ready to query, so agents
-                and automations can find rows, compare numbers, and answer
-                repeat questions whenever they run.
+                Settra turns spreadsheet data into reusable data Apps you build
+                with AI and deliver as mini BI reports wherever work happens.
               </p>
             </header>
 
             <div className="workflow-grid">
               {workflows.map((workflow) => (
                 <article className="workflow-item" key={workflow.prompt}>
-                  <span className="quote-mark" aria-hidden="true">
-                    “
+                  <span className="workflow-node" aria-hidden="true">
+                    <span />
                   </span>
                   <h3>{workflow.prompt}</h3>
                   <p>{workflow.answer}</p>
@@ -194,18 +195,16 @@ export default function Home() {
 
         <section
           className="security-section"
-          id="security"
+          id="why-settra"
           aria-labelledby="security-title"
         >
           <div className="container security-grid">
             <div>
-              <h2 id="security-title">
-                Use managed storage, or bring your own database.
-              </h2>
+              <h2 id="security-title">Stop rebuilding the same analysis.</h2>
               <p className="security-copy">
-                Start quickly with Settra managed PostgreSQL, or connect your
-                own PostgreSQL database when you want full control over where
-                staged data lives.
+                Create the App once with AI, then deliver dependable mini BI
+                reports to people and agents in chat, in Settra, or on any
+                schedule.
               </p>
               <a
                 className="text-link"
@@ -221,30 +220,30 @@ export default function Home() {
               <li>
                 <span aria-hidden="true">✓</span>
                 <div>
-                  <strong>Separate workspaces</strong>
+                  <strong>Save hours of repeated work</strong>
                   <p>
-                    Each workspace keeps its connections, agent access, and
-                    usage separate.
+                    Turn recurring spreadsheet analysis into an App once and
+                    reuse it every time the question comes up.
                   </p>
                 </div>
               </li>
               <li>
                 <span aria-hidden="true">✓</span>
                 <div>
-                  <strong>Secure Google access</strong>
+                  <strong>Keep agents from guessing</strong>
                   <p>
-                    Google connection tokens are encrypted and stay inside the
-                    Settra deployment you choose.
+                    Give every agent the same trusted App, so it follows your
+                    rules instead of inventing its own interpretation.
                   </p>
                 </div>
               </li>
               <li>
                 <span aria-hidden="true">✓</span>
                 <div>
-                  <strong>Private query history</strong>
+                  <strong>Catch schema drift early</strong>
                   <p>
-                    Settra records usage metrics, not the questions your agents
-                    ask or the answers they receive.
+                    See what a spreadsheet change will affect before it breaks
+                    the Apps people and agents depend on.
                   </p>
                 </div>
               </li>
@@ -254,14 +253,14 @@ export default function Home() {
 
         <section className="cta-section">
           <div className="container cta-card">
-            <h2>Stop wasting time.</h2>
+            <h2>Build the data App once.</h2>
             <p>
-              Connect your data once, then let Codex, ChatGPT, Claude, and
-              custom agents query it whenever they need it.
+              Create it with AI, then deliver reliable mini BI reports in chat,
+              on a schedule, or wherever your team already works.
             </p>
             <div className="cta-actions">
               <a className="button button-inverse" href={`${APP_URL}/register`}>
-                Create your account <span aria-hidden="true">→</span>
+                Build your first App <span aria-hidden="true">→</span>
               </a>
               <a className="cta-login" href={`${APP_URL}/login`}>
                 Already using Settra? Sign in
@@ -288,10 +287,10 @@ export default function Home() {
               width="568"
               height="160"
             />
-            <p>Durable data for AI agents.</p>
+            <p>Agent-native data apps.</p>
           </div>
           <nav aria-label="Footer navigation">
-            <a href="#security">Security</a>
+            <a href="#why-settra">Why Settra</a>
             <a href="/connect">Connect</a>
             <a href="/support">Support</a>
             <a href={GITHUB_URL} target="_blank" rel="noreferrer">

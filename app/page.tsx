@@ -147,7 +147,7 @@ export default function Home() {
               <span aria-hidden="true">→</span>
             </a>
             <h1>Build agent‑native data apps.</h1>
-            <p className="hero-copy">
+            <p className="hero-copy text-2xl font-semibold">
               Turn spreadsheet data into reliable mini BI reports with AI. Build
               once, then use the same App in chat, on a schedule, or in Settra.
             </p>

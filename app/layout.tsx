@@ -3,9 +3,9 @@ import "./globals.css";
 
 const SITE_URL = "https://www.settra.io";
 const GOOGLE_TAG_ID = "G-6JDD6KVW4W";
-const TITLE = "Settra: Agent-Native Data Apps";
+const TITLE = "Settra: Build Trusted Business Reports with AI";
 const DESCRIPTION =
-  "Build reusable data Apps with AI, prevent agent guesswork, handle schema drift, and deliver mini BI reports in chat or on a schedule.";
+  "Turn spreadsheet data into reusable mini BI Apps with AI, use trusted reports in chat, and get ready for scheduled email and Slack delivery.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),

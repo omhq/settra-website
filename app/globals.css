@@ -417,14 +417,210 @@ h1 {
   }
 }
 
+.report-section,
 .workflow-section,
 .security-section {
   padding: 6.75rem 0;
 }
+.report-section {
+  border-bottom: 1px solid var(--border);
+  background: color-mix(in oklab, var(--primary) 2.5%, var(--background));
+}
+.report-grid {
+  max-width: 68rem;
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 5rem;
+  align-items: center;
+}
+.section-eyebrow {
+  margin: 0 0 1rem;
+  color: var(--primary);
+  font-size: 0.74rem;
+  font-weight: 780;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+.report-copy h2 {
+  max-width: 31rem;
+  margin: 0;
+  font-size: clamp(2rem, 4.2vw, 3.2rem);
+  line-height: 1.04;
+  letter-spacing: -0.045em;
+  text-wrap: balance;
+}
+.report-copy > p:last-of-type {
+  max-width: 34rem;
+  margin: 1.35rem 0 0;
+  color: var(--muted-foreground);
+  font-size: 1rem;
+  line-height: 1.75;
+}
+.report-benefits {
+  margin: 2rem 0 0;
+  padding: 0;
+  display: grid;
+  gap: 1.2rem;
+  list-style: none;
+}
+.report-benefits li {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.9rem;
+}
+.report-benefits li > span {
+  padding-top: 0.12rem;
+  color: var(--primary);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.72rem;
+  font-weight: 760;
+}
+.report-benefits strong {
+  font-size: 0.94rem;
+}
+.report-benefits p {
+  margin: 0.35rem 0 0;
+  color: var(--muted-foreground);
+  font-size: 0.87rem;
+  line-height: 1.6;
+}
+.report-preview {
+  overflow: hidden;
+  border: 1px solid color-mix(in oklab, var(--primary) 24%, var(--border));
+  border-radius: 1.2rem;
+  background: var(--card);
+  box-shadow: 0 28px 70px rgb(0 0 0 / 9%);
+}
+.report-preview-header,
+.report-destinations {
+  padding: 1.25rem 1.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.report-preview-header {
+  border-bottom: 1px solid var(--border);
+}
+.report-preview-header p,
+.report-parameters > p,
+.report-date,
+.report-destinations > span {
+  margin: 0;
+  color: var(--muted-foreground);
+  font-size: 0.7rem;
+  font-weight: 690;
+  letter-spacing: 0.055em;
+  text-transform: uppercase;
+}
+.report-preview-header h3 {
+  margin: 0.3rem 0 0;
+  font-size: 1.08rem;
+  letter-spacing: -0.025em;
+}
+.report-status {
+  padding: 0.35rem 0.6rem;
+  border-radius: 999px;
+  background: color-mix(in oklab, var(--primary) 10%, var(--card));
+  color: var(--primary);
+  font-size: 0.7rem;
+  font-weight: 740;
+}
+.report-schedule {
+  padding: 0.85rem 1.4rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-bottom: 1px solid var(--border);
+  color: var(--muted-foreground);
+  font-size: 0.78rem;
+}
+.report-schedule span {
+  color: var(--primary);
+  font-size: 1rem;
+}
+.report-parameters {
+  padding: 1.15rem 1.4rem 1.3rem;
+  border-bottom: 1px solid var(--border);
+  background: color-mix(in oklab, var(--muted) 42%, var(--card));
+}
+.report-parameters > div {
+  margin-top: 0.8rem;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.55rem;
+}
+.report-parameters div > span {
+  min-width: 0;
+  padding: 0.7rem 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 0.6rem;
+  background: var(--card);
+  font-size: 0.76rem;
+  font-weight: 650;
+}
+.report-parameters small {
+  margin-bottom: 0.3rem;
+  display: block;
+  color: var(--muted-foreground);
+  font-size: 0.62rem;
+  font-weight: 570;
+}
+.report-results {
+  padding: 1.4rem;
+}
+.report-metrics {
+  margin-top: 0.8rem;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+.report-metrics div {
+  min-width: 0;
+}
+.report-metrics span {
+  display: block;
+  color: var(--muted-foreground);
+  font-size: 0.7rem;
+}
+.report-metrics strong {
+  margin-top: 0.25rem;
+  display: block;
+  font-size: 1.25rem;
+  letter-spacing: -0.035em;
+}
+.report-summary {
+  margin: 1.25rem 0 0;
+  padding: 1rem;
+  border-left: 2px solid var(--primary);
+  background: color-mix(in oklab, var(--primary) 5%, var(--card));
+  color: var(--muted-foreground);
+  font-size: 0.82rem;
+  line-height: 1.65;
+}
+.report-destinations {
+  border-top: 1px solid var(--border);
+}
+.report-destinations > div {
+  display: flex;
+  gap: 0.45rem;
+}
+.report-destinations > div span {
+  padding: 0.35rem 0.55rem;
+  border: 1px solid var(--border);
+  border-radius: 0.45rem;
+  color: var(--muted-foreground);
+  font-size: 0.7rem;
+  font-weight: 670;
+}
 .workflow-section {
+  scroll-margin-top: 1rem;
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
   background: var(--background);
+}
+.workflow-section .section-eyebrow {
+  margin-bottom: 1rem;
 }
 .section-header {
   max-width: 48rem;
@@ -449,85 +645,36 @@ h1 {
   line-height: 1.8;
   text-wrap: balance;
 }
-.workflow-grid {
-  max-width: 68rem;
-  margin: 4rem auto 0;
+.workflow-steps {
+  max-width: 44rem;
+  margin: 3.5rem auto 0;
+  padding: 0;
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1rem;
+  gap: 1.75rem;
+  list-style: none;
 }
-.workflow-item {
-  position: relative;
-  min-height: 10.5rem;
-  padding: 1.55rem 1.65rem 1.55rem 4.25rem;
-  border: 1px solid var(--border);
-  border-radius: 1rem;
-  background: var(--card);
-  transition:
-    border-color 180ms,
-    background 180ms,
-    transform 180ms;
+.workflow-step {
+  display: grid;
+  justify-items: center;
+  gap: 0.7rem;
+  text-align: center;
 }
-.workflow-item:hover {
-  border-color: color-mix(in oklab, var(--primary) 30%, var(--border));
-  background: var(--card-hover);
-  transform: translateY(-2px);
-}
-.workflow-node {
+.workflow-icon {
   width: 1.85rem;
   height: 1.85rem;
-  position: absolute;
-  left: 1.45rem;
-  top: 1.45rem;
-  display: grid;
-  place-items: center;
-  border: 1px solid color-mix(in oklab, var(--primary) 26%, var(--border));
-  border-radius: 0.55rem;
-  background: color-mix(in oklab, var(--primary) 7%, var(--card));
+  color: var(--primary);
 }
-.workflow-node::before,
-.workflow-node::after,
-.workflow-node span {
-  width: 0.3rem;
-  height: 0.3rem;
-  position: absolute;
-  border-radius: 999px;
-  background: var(--primary);
-  content: "";
-}
-.workflow-node::before {
-  transform: translate(-0.37rem, 0.25rem);
-}
-.workflow-node::after {
-  transform: translate(0.37rem, 0.25rem);
-}
-.workflow-node span {
-  transform: translateY(-0.33rem);
-}
-.workflow-node {
-  background-image:
-    linear-gradient(
-      33deg,
-      transparent 46%,
-      color-mix(in oklab, var(--primary) 55%, transparent) 47% 52%,
-      transparent 53%
-    ),
-    linear-gradient(
-      -33deg,
-      transparent 46%,
-      color-mix(in oklab, var(--primary) 55%, transparent) 47% 52%,
-      transparent 53%
-    );
-}
-.workflow-item h3 {
+.workflow-step h3 {
   margin: 0;
   font-size: 1.05rem;
   letter-spacing: -0.02em;
 }
-.workflow-item p {
-  margin: 0.75rem 0 0;
+.workflow-step p {
+  margin: 0.35rem 0 0;
+  max-width: 38rem;
   color: var(--muted-foreground);
-  line-height: 1.75;
+  font-size: 0.94rem;
+  line-height: 1.6;
 }
 
 .security-section {
@@ -809,9 +956,19 @@ h1 {
   .primary-nav {
     display: none;
   }
+  .report-section,
   .workflow-section,
   .security-section {
     padding: 5.25rem 0;
+  }
+  .report-grid {
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+  }
+  .report-copy,
+  .report-copy h2,
+  .report-copy > p:last-of-type {
+    max-width: 42rem;
   }
   .security-grid {
     grid-template-columns: 1fr;
@@ -864,11 +1021,13 @@ h1 {
     padding-bottom: 2.25rem;
   }
 
-  .workflow-grid {
-    grid-template-columns: 1fr;
+  .workflow-steps {
+    margin-top: 3rem;
+    gap: 1.5rem;
   }
-  .workflow-grid {
-    gap: 2.5rem;
+  .report-parameters > div,
+  .report-metrics {
+    grid-template-columns: 1fr;
   }
   .cta-card {
     width: calc(100% - 2rem);

@@ -147,7 +147,7 @@ function ScheduledReportMessage() {
       <g className="message-rail-copy">
         <circle cx="42" cy="46" r="14" />
         <path d="M35 46h14M42 39v14" />
-        <text className="message-workspace-name" x="66" y="51">Settra</text>
+        <text className="message-workspace-name" x="66" y="51"></text>
         <text className="message-rail-label" x="32" y="102">CHANNELS</text>
         <text className="message-channel-active" x="34" y="138">#  sales-reports</text>
         <text className="message-channel" x="34" y="174">#  revenue-team</text>

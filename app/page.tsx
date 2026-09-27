@@ -125,6 +125,83 @@ function WorkflowIcon({ icon }: { icon: string }) {
   );
 }
 
+function ScheduledReportMessage() {
+  return (
+    <svg
+      className="report-message"
+      viewBox="0 0 640 520"
+      role="img"
+      aria-labelledby="report-message-title report-message-description"
+    >
+      <title id="report-message-title">
+        Weekly sales report in a team chat
+      </title>
+      <desc id="report-message-description">
+        Settra posts a Monday pipeline brief with trusted sales metrics to the
+        sales reports channel.
+      </desc>
+
+      <rect className="message-shell" x="8" y="8" width="624" height="504" rx="22" />
+      <path className="message-rail" d="M8 30a22 22 0 0 1 22-22h118v504H30a22 22 0 0 1-22-22Z" />
+
+      <g className="message-rail-copy">
+        <circle cx="42" cy="46" r="14" />
+        <path d="M35 46h14M42 39v14" />
+        <text className="message-workspace-name" x="66" y="51">Settra</text>
+        <text className="message-rail-label" x="32" y="102">CHANNELS</text>
+        <text className="message-channel-active" x="34" y="138">#  sales-reports</text>
+        <text className="message-channel" x="34" y="174">#  revenue-team</text>
+        <text className="message-channel" x="34" y="210">#  pipeline</text>
+        <text className="message-rail-label" x="32" y="272">DIRECT MESSAGES</text>
+        <circle className="message-presence" cx="40" cy="306" r="4" />
+        <text className="message-channel" x="52" y="311">You</text>
+      </g>
+
+      <g className="message-content">
+        <text className="message-title" x="180" y="54">#  sales-reports</text>
+        <text className="message-subtitle" x="180" y="78">4 members</text>
+        <path className="message-divider" d="M148 96h484" />
+
+        <circle className="message-avatar" cx="190" cy="132" r="21" />
+        <text className="message-avatar-letter" x="190" y="139">S</text>
+        <text className="message-sender" x="224" y="127">Settra</text>
+        <text className="message-time" x="281" y="127">8:00 AM</text>
+        <text className="message-copy" x="224" y="151">Here&apos;s your Monday pipeline brief.</text>
+
+        <rect className="message-report-card" x="224" y="170" width="354" height="214" rx="11" />
+        <rect className="message-report-accent" x="224" y="170" width="5" height="214" rx="2.5" />
+        <text className="message-report-kicker" x="248" y="204">WEEKLY SALES REPORT</text>
+        <text className="message-report-title" x="248" y="235">Monday pipeline brief</text>
+        <path className="message-card-divider" d="M248 254h304" />
+        <text className="message-metric-label" x="248" y="283">Pipeline coverage</text>
+        <text className="message-metric-value" x="248" y="315">3.2x</text>
+        <text className="message-metric-label" x="365" y="283">Weighted pipeline</text>
+        <text className="message-metric-value" x="365" y="315">$1.24m</text>
+        <text className="message-metric-label" x="494" y="283">At risk</text>
+        <text className="message-metric-value" x="494" y="315">$184k</text>
+        <path className="message-card-divider" d="M248 332h304" />
+        <text className="message-report-note" x="248" y="357">
+          Coverage is above target; four late-stage deals
+        </text>
+        <text className="message-report-note" x="248" y="375">
+          account for most of the quarter&apos;s risk.
+        </text>
+
+        <circle className="message-reply-avatar" cx="190" cy="423" r="18" />
+        <text className="message-reply-letter" x="190" y="429">M</text>
+        <text className="message-sender" x="220" y="419">Maya</text>
+        <text className="message-time" x="260" y="419">8:02 AM</text>
+        <text className="message-copy" x="220" y="444">Perfect, sharing this with the team.</text>
+
+        <rect className="message-compose" x="174" y="467" width="420" height="27" rx="6" />
+        <text className="message-compose-copy" x="189" y="485">
+          Message #sales-reports
+        </text>
+      </g>
+    </svg>
+  );
+}
+
 export default function Home() {
   const dark = useSyncExternalStore(
     subscribeToTheme,
@@ -253,70 +330,7 @@ export default function Home() {
               </ul>
             </div>
 
-            <article
-              className="report-preview"
-              aria-label="Scheduled report preview"
-            >
-              <header className="report-preview-header">
-                <div>
-                  <p>Weekly sales report</p>
-                  <h3>Monday pipeline brief</h3>
-                </div>
-              </header>
-
-              <div className="report-schedule">
-                <span aria-hidden="true">◷</span>
-                Every Monday at 8:00 AM
-              </div>
-
-              <div className="report-parameters">
-                <p>Report inputs</p>
-                <div>
-                  <span>
-                    <small>Period</small>
-                    Current quarter
-                  </span>
-                  <span>
-                    <small>Region</small>
-                    All regions
-                  </span>
-                  <span>
-                    <small>Compare</small>
-                    Revenue target
-                  </span>
-                </div>
-              </div>
-
-              <div className="report-results">
-                <p className="report-date">Prepared from the latest snapshot</p>
-                <div className="report-metrics">
-                  <div>
-                    <span>Pipeline coverage</span>
-                    <strong>3.2x</strong>
-                  </div>
-                  <div>
-                    <span>Weighted pipeline</span>
-                    <strong>$1.24m</strong>
-                  </div>
-                  <div>
-                    <span>At risk</span>
-                    <strong>$184k</strong>
-                  </div>
-                </div>
-                <p className="report-summary">
-                  Coverage remains above target, but four late-stage deals now
-                  account for most of the quarter&apos;s risk.
-                </p>
-              </div>
-
-              <footer className="report-destinations">
-                <span>Planned delivery</span>
-                <div>
-                  <span>Email</span>
-                  <span>Slack</span>
-                </div>
-              </footer>
-            </article>
+            <ScheduledReportMessage />
           </div>
         </section>
 

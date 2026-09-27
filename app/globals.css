@@ -488,6 +488,136 @@ h1 {
   font-size: 0.87rem;
   line-height: 1.6;
 }
+.report-message {
+  display: block;
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 28px 70px rgb(0 0 0 / 9%));
+}
+.report-message text {
+  font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+}
+.report-message .message-shell {
+  fill: var(--card);
+  stroke: color-mix(in oklab, var(--primary) 24%, var(--border));
+  stroke-width: 1;
+}
+.report-message .message-rail {
+  fill: #3f0d40;
+}
+.message-rail-copy path {
+  fill: none;
+  stroke: #fff;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+}
+.message-rail-copy > circle:first-child {
+  fill: #693b68;
+}
+.message-workspace-name {
+  fill: #fff;
+  font-size: 15px;
+  font-weight: 700;
+}
+.message-rail-label {
+  fill: #b99cbb;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+.message-channel,
+.message-channel-active {
+  font-size: 10px;
+}
+.message-channel {
+  fill: #dac5db;
+}
+.message-channel-active {
+  fill: #fff;
+  font-weight: 700;
+}
+.message-presence {
+  fill: #2eb67d;
+}
+.message-title {
+  fill: var(--foreground);
+  font-size: 16px;
+  font-weight: 700;
+}
+.message-subtitle,
+.message-time,
+.message-compose-copy {
+  fill: var(--muted-foreground);
+  font-size: 9px;
+}
+.message-divider,
+.message-card-divider {
+  stroke: var(--border);
+  stroke-width: 1;
+}
+.message-avatar {
+  fill: var(--primary);
+}
+.message-avatar-letter,
+.message-reply-letter {
+  fill: #fff;
+  font-size: 18px;
+  font-weight: 700;
+  text-anchor: middle;
+}
+.message-sender {
+  fill: var(--foreground);
+  font-size: 11px;
+  font-weight: 700;
+}
+.message-copy {
+  fill: var(--foreground);
+  font-size: 11px;
+}
+.message-report-card {
+  fill: color-mix(in oklab, var(--primary) 5%, var(--card));
+  stroke: var(--border);
+  stroke-width: 1;
+}
+.message-report-accent {
+  fill: var(--primary);
+}
+.message-report-kicker {
+  fill: var(--muted-foreground);
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.7px;
+}
+.message-report-title {
+  fill: var(--foreground);
+  font-size: 15px;
+  font-weight: 700;
+}
+.message-metric-label {
+  fill: var(--muted-foreground);
+  font-size: 8px;
+}
+.message-metric-value {
+  fill: var(--foreground);
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.4px;
+}
+.message-report-note {
+  fill: var(--muted-foreground);
+  font-size: 9px;
+}
+.message-reply-avatar {
+  fill: #e0a16c;
+}
+.message-reply-letter {
+  font-size: 14px;
+}
+.message-compose {
+  fill: color-mix(in oklab, var(--muted) 80%, var(--card));
+  stroke: var(--border);
+  stroke-width: 1;
+}
 .report-preview {
   overflow: hidden;
   border: 1px solid color-mix(in oklab, var(--primary) 24%, var(--border));

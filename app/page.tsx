@@ -193,18 +193,6 @@ export default function Home() {
         <section className="hero">
           <AgentNativeBackdrop />
           <div className="container hero-inner">
-            <a
-              className="announcement"
-              href={GITHUB_URL}
-              target="_blank"
-              rel="noreferrer"
-            >
-              <span className="spark" aria-hidden="true">
-                ✦
-              </span>
-              Open source · Agent-native
-              <span aria-hidden="true">→</span>
-            </a>
             <h1>Build data Apps that keep your team informed.</h1>
             <p className="hero-copy text-2xl font-semibold">
               Compose trusted mini BI reports with AI from spreadsheet data.

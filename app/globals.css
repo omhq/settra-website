@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&display=swap");
 @import "tailwindcss";
 @source "./**/*.{js,ts,jsx,tsx}";
 
@@ -70,15 +70,12 @@ body {
 }
 :is(h1, h2, h3, h4, h5, h6) {
   font-family:
-    "Geist",
-    "Geist Fallback",
-    ui-sans-serif,
-    system-ui,
-    -apple-system,
-    sans-serif;
-  font-weight: 600;
+    "Merriweather",
+    Georgia,
+    serif;
+  font-weight: 700;
   line-height: 1.04;
-  letter-spacing: -0.045em;
+  letter-spacing: -0.03em;
 }
 a {
   color: inherit;

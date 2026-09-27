@@ -69,13 +69,10 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 :is(h1, h2, h3, h4, h5, h6) {
-  font-family:
-    "Merriweather",
-    Georgia,
-    serif;
+  font-family: "Merriweather", Georgia, serif;
   font-weight: 700;
   line-height: 1.04;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.05em;
 }
 a {
   color: inherit;

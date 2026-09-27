@@ -221,13 +221,10 @@ export default function Home() {
           <div className="container report-grid">
             <div className="report-copy">
               <h2 id="report-title">Updates arrive before anyone asks.</h2>
-              <p>
-                Choose the question, inputs, and audience with AI.
-              </p>
+              <p>Choose the question, inputs, and audience with AI.</p>
 
               <ul className="report-benefits">
                 <li>
-                  <span aria-hidden="true">01</span>
                   <div>
                     <strong>Set reusable inputs</strong>
                     <p>
@@ -237,16 +234,15 @@ export default function Home() {
                   </div>
                 </li>
                 <li>
-                  <span aria-hidden="true">02</span>
                   <div>
                     <strong>Automate</strong>
                     <p>
-                      Every scheduled run uses the same metrics and business logic baked into the app.
+                      Every scheduled run uses the same metrics and business
+                      logic baked into the app.
                     </p>
                   </div>
                 </li>
                 <li>
-                  <span aria-hidden="true">03</span>
                   <div>
                     <strong>Deliver an answer, not another dashboard</strong>
                     <p>

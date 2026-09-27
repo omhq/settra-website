@@ -1,0 +1,10 @@
+.git
+.next
+dist
+node_modules
+npm-debug.log
+outreach_api/.venv
+outreach_api/data
+outreach_api/__pycache__
+**/__pycache__
+*.pyc

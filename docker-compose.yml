@@ -1,0 +1,41 @@
+services:
+  outreach-frontend:
+    build:
+      context: ./outreach-frontend
+      dockerfile: Dockerfile
+      args:
+        # This is embedded in the browser bundle at build time.
+        NEXT_PUBLIC_OUTREACH_API_URL: ${NEXT_PUBLIC_OUTREACH_API_URL:-http://localhost:8001}
+    ports:
+      - "127.0.0.1:3001:3000"
+    depends_on:
+      outreach-api:
+        condition: service_healthy
+
+  outreach-api:
+    build:
+      context: ./outreach_api
+    environment:
+      # Explicit origins are useful for deployed environments. During local
+      # development, accept loopback hosts on whatever port Vite selects.
+      OUTREACH_ALLOWED_ORIGINS: ${OUTREACH_ALLOWED_ORIGINS:-http://localhost:3001,http://127.0.0.1:3001,http://[::1]:3001}
+      OUTREACH_ALLOWED_ORIGIN_REGEX: '${OUTREACH_ALLOWED_ORIGIN_REGEX:-^https?://(localhost|127\.0\.0\.1|\[::1\])(?::\d+)?}'
+    ports:
+      - "127.0.0.1:8001:8001"
+    volumes:
+      - outreach-data:/data
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "python",
+          "-c",
+          "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8001/api/health')",
+        ]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+      start_period: 5s
+
+volumes:
+  outreach-data:

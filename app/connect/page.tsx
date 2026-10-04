@@ -7,9 +7,9 @@ const CLAUDE_INSTALL_URL =
   "https://claude.ai/customize/connectors?modal=add-custom-connector&connectorName=Settra&connectorUrl=https%3A%2F%2Fapp.settra.io%2Fmcp";
 
 export const metadata: Metadata = {
-  title: "Connect Settra",
+  title: "Connect Your AI Assistant",
   description:
-    "Connect Settra agent-native data apps to Claude, ChatGPT, Codex, or another MCP client.",
+    "Connect your AI assistant to Settra so your team can create, rerun, and build on shared data artifacts.",
   alternates: { canonical: "/connect" },
   openGraph: {
     type: "website",
@@ -17,8 +17,22 @@ export const metadata: Metadata = {
     siteName: "Settra",
     title: "Connect Settra to your AI assistant",
     description:
-      "Authorize your Settra workspace so an AI assistant can discover, build, and run your data Apps.",
-    images: [{ url: "/og.png", width: 1200, height: 630, alt: "Settra" }],
+      "Connect your AI assistant to Settra so your team can create, rerun, and build on shared data artifacts.",
+    images: [
+      {
+        url: "/og-data-artifacts.png",
+        width: 1200,
+        height: 630,
+        alt: "Settra — reusable data artifacts from AI answers",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Connect Settra to your AI assistant",
+    description:
+      "Connect your AI assistant to Settra so your team can create, rerun, and build on shared data artifacts.",
+    images: ["/og-data-artifacts.png"],
   },
 };
 
@@ -26,7 +40,7 @@ export default function ConnectPage() {
   return (
     <LegalPage
       title="Connect Settra"
-      description="Authorize your workspace so Claude, ChatGPT, Codex, or another MCP client can discover, build, and run your data Apps."
+      description="Connect an AI assistant to Settra so your team can create, rerun, and build on shared data artifacts."
       dateLabel={null}
     >
       <section>

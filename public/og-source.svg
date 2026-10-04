@@ -19,11 +19,14 @@
 
   <image href="settra-logo-light.png" x="70" y="66" width="238" height="67"/>
 
-  <text x="70" y="257" fill="#171717" font-family="Inter, Arial, sans-serif" font-size="68" font-weight="750" letter-spacing="-3">
-    Agent-native data apps.
+  <text x="70" y="225" fill="#171717" font-family="Inter, Arial, sans-serif" font-size="62" font-weight="750" letter-spacing="-2.5">
+    Turn AI answers into
   </text>
-  <text x="72" y="314" fill="#667085" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="500">
-    Build once with AI. Get reliable mini BI reports anywhere.
+  <text x="70" y="294" fill="#171717" font-family="Inter, Arial, sans-serif" font-size="62" font-weight="750" letter-spacing="-2.5">
+    reusable data artifacts.
+  </text>
+  <text x="72" y="347" fill="#667085" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="500">
+    Rerun, share, and build on every answer as your data changes.
   </text>
 
   <g fill="none" stroke="#2463eb" stroke-width="2" opacity=".38">
@@ -59,6 +62,6 @@
   </g>
 
   <text x="70" y="582" fill="#2463eb" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="700" letter-spacing="2">
-    SPREADSHEETS  ·  BUILD WITH AI  ·  DATA APPS  ·  REPORTS
+    ASK  ·  SAVE  ·  RERUN  ·  BUILD
   </text>
 </svg>

@@ -3,9 +3,9 @@ import "./globals.css";
 
 const SITE_URL = "https://www.settra.io";
 const GOOGLE_TAG_ID = "G-6JDD6KVW4W";
-const TITLE = "Settra: Build Trusted Business Reports with AI";
+const TITLE = "Settra: Turn AI Answers into Reusable Data Artifacts";
 const DESCRIPTION =
-  "Turn spreadsheet data into reusable mini BI Apps with AI, use trusted reports in chat, and get ready for scheduled email and Slack delivery.";
+  "Turn AI answers into reusable data artifacts your team can rerun, share, and build on as the data changes.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -21,13 +21,12 @@ export const metadata: Metadata = {
   publisher: "Settra",
   category: "technology",
   keywords: [
-    "agent-native data apps",
-    "AI agents",
-    "MCP server",
-    "Google Sheets",
-    "mini BI reports",
-    "spreadsheet automation",
-    "scheduled reports",
+    "reusable data artifacts",
+    "AI data artifacts",
+    "AI business answers",
+    "repeatable data analysis",
+    "AI reporting",
+    "self-service analytics",
   ],
   robots: {
     index: true,
@@ -50,10 +49,10 @@ export const metadata: Metadata = {
     description: DESCRIPTION,
     images: [
       {
-        url: "/og.png",
+        url: "/og-data-artifacts.png",
         width: 1200,
         height: 630,
-        alt: "Settra — agent-native data apps",
+        alt: "Settra — reusable data artifacts from AI answers",
       },
     ],
   },
@@ -61,7 +60,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: TITLE,
     description: DESCRIPTION,
-    images: ["/og.png"],
+    images: ["/og-data-artifacts.png"],
   },
 };
 
@@ -91,7 +90,7 @@ const structuredData = {
       name: "Settra",
       url: SITE_URL,
       applicationCategory: "BusinessApplication",
-      applicationSubCategory: "Agent-native data application platform",
+      applicationSubCategory: "Data analysis and reporting",
       operatingSystem: "Web",
       description: DESCRIPTION,
       license: "https://www.apache.org/licenses/LICENSE-2.0",

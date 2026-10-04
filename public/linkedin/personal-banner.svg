@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1584" height="396" viewBox="0 0 1584 396" role="img" aria-labelledby="title desc">
   <title id="title">Settra personal LinkedIn banner</title>
-  <desc id="desc">Fragmented spreadsheet data becomes an organized data layer and reliable AI workflows.</desc>
+  <desc id="desc">AI answers become reusable data artifacts.</desc>
   <defs>
     <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0" stop-color="#ffffff"/>
@@ -110,7 +110,7 @@
 
   <!-- Positioning statement -->
   <text x="1020" y="176" fill="#0a1424" font-family="Inter, Arial, Helvetica, sans-serif" font-size="28" font-weight="700" letter-spacing="-1">
-    <tspan x="1020" dy="0">From fragmented data and AI</tspan>
-    <tspan x="1020" dy="34">prototypes to reliable production systems.</tspan>
+    <tspan x="1020" dy="0">Turn AI answers into reusable</tspan>
+    <tspan x="1020" dy="34">data artifacts your team can build on.</tspan>
   </text>
 </svg>

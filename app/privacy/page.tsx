@@ -20,10 +20,10 @@ export const metadata: Metadata = {
       "How Settra accesses, uses, stores, shares, and deletes personal information and Google user data.",
     images: [
       {
-        url: "/og.png",
+        url: "/og-data-artifacts.png",
         width: 1200,
         height: 630,
-        alt: "Settra — durable spreadsheet data for AI agents",
+        alt: "Settra — reusable data artifacts from AI answers",
       },
     ],
   },
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     title: "Privacy Policy | Settra",
     description:
       "How Settra accesses, uses, stores, shares, and deletes personal information and Google user data.",
-    images: ["/og.png"],
+    images: ["/og-data-artifacts.png"],
   },
 };
 

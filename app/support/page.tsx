@@ -6,7 +6,8 @@ const GITHUB_ISSUES_URL = "https://github.com/omhq/settra/issues";
 
 export const metadata: Metadata = {
   title: "Support",
-  description: "Get help with Settra accounts, data syncs, and AI connections.",
+  description:
+    "Get help with your Settra account, saved data artifacts, and connected AI assistants.",
   alternates: { canonical: "/support" },
   openGraph: {
     type: "website",
@@ -14,8 +15,22 @@ export const metadata: Metadata = {
     siteName: "Settra",
     title: "Settra Support",
     description:
-      "Get help with Settra accounts, data syncs, and AI connections.",
-    images: [{ url: "/og.png", width: 1200, height: 630, alt: "Settra" }],
+      "Get help with your Settra account, saved data artifacts, and connected AI assistants.",
+    images: [
+      {
+        url: "/og-data-artifacts.png",
+        width: 1200,
+        height: 630,
+        alt: "Settra — reusable data artifacts from AI answers",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Settra Support",
+    description:
+      "Get help with your Settra account, saved data artifacts, and connected AI assistants.",
+    images: ["/og-data-artifacts.png"],
   },
 };
 
@@ -23,7 +38,7 @@ export default function SupportPage() {
   return (
     <LegalPage
       title="Settra Support"
-      description="Help with accounts, Google Drive syncs, data Apps, and AI connections."
+      description="Help with your account, saved data artifacts, and connected AI assistants."
       dateLabel={null}
     >
       <section>

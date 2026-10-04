@@ -393,27 +393,27 @@ def playbook() -> dict:
         "signals": [
             "Their profile, hiring posts, or company content mentions Google Sheets, spreadsheet-heavy reporting, operational dashboards, RevOps, FP&A, or manual reporting.",
             "They are hiring for operations, revenue operations, analytics, finance operations, or automation while still small enough that data has not moved into a full warehouse.",
-            "They post about rolling out Claude, ChatGPT, AI agents, MCP, internal tools, or automation—especially with a practical operations focus.",
+            "They post about rolling out Claude, ChatGPT, AI agents, MCP, internal tools, or automation-especially with a practical operations focus.",
             "They describe recurring client reports, status updates, forecasts, project tracking, pipeline reviews, or follow-up work that happens in spreadsheets.",
             "A recent growth event, new service line, merger, or systems migration has made spreadsheet ownership and definitions harder to keep straight.",
         ],
         "avoid": [
             "Companies with no material spreadsheet workflow or a mature, well-resourced data platform that already owns governed agent access.",
-            "People whose remit is only generic AI strategy—unless they own a concrete operational reporting workflow.",
+            "People whose remit is only generic AI strategy-unless they own a concrete operational reporting workflow.",
             "A connection request that pitches features. Start from one observed workflow or signal instead.",
         ],
         "templates": [
             {
-                "name": "Connection request — operations",
-                "body": "Hi {first_name} — saw {specific signal}. I’m speaking with ops teams that still run key workflows in Sheets but want to use AI without letting it guess at the data. Would be glad to connect.",
+                "name": "Connection request - operations",
+                "body": "Hi {first_name} - saw {specific signal}. I’m speaking with ops teams that still run key workflows in Sheets but want to use AI without letting it guess at the data. Would be glad to connect.",
             },
             {
-                "name": "After acceptance — diagnostic question",
+                "name": "After acceptance - diagnostic question",
                 "body": "Thanks for connecting, {first_name}. Quick question: when someone asks a recurring question about {workflow}, does the team still rebuild the answer from the spreadsheet each time, or do you have a dependable workflow for it already?",
             },
             {
-                "name": "Follow-up — value hypothesis",
-                "body": "The reason I asked: we’re building Settra for teams that want AI assistants to answer from their Sheets using the same definitions and rules the team trusts—without giving the assistant raw access or asking it to improvise. If {workflow} is a pain point, I can show the 3-minute version.",
+                "name": "Follow-up - value hypothesis",
+                "body": "The reason I asked: we’re building Settra for teams that want AI assistants to answer from their Sheets using the same definitions and rules the team trusts-without giving the assistant raw access or asking it to improvise. If {workflow} is a pain point, I can show the 3-minute version.",
             },
             {
                 "name": "Breakup / permission to close",

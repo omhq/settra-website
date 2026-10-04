@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 
 const SITE_URL = "https://www.settra.io";
-const LAST_MODIFIED = new Date("2026-09-01");
+const LAST_MODIFIED = new Date("2026-10-04");
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [

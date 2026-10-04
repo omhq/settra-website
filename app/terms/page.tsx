@@ -15,10 +15,10 @@ export const metadata: Metadata = {
     description: "The terms that apply when you use Settra.",
     images: [
       {
-        url: "/og.png",
+        url: "/og-data-artifacts.png",
         width: 1200,
         height: 630,
-        alt: "Settra — durable spreadsheet data for AI agents",
+        alt: "Settra — reusable data artifacts from AI answers",
       },
     ],
   },
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Terms of Service | Settra",
     description: "The terms that apply when you use Settra.",
-    images: ["/og.png"],
+    images: ["/og-data-artifacts.png"],
   },
 };
 

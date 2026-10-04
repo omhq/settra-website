@@ -80,7 +80,7 @@ export function LegalPage({
               width="568"
               height="160"
             />
-            <p>Durable data for AI agents.</p>
+            <p>Reusable answers from your data.</p>
           </div>
           <nav aria-label="Legal navigation">
             <a href="/connect">Connect</a>

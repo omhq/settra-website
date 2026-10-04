@@ -71,7 +71,7 @@ function classNames(...values: (string | false | undefined)[]) {
 }
 
 function formatDate(value?: string | null) {
-  if (!value) return "—";
+  if (!value) return "-";
   const date = new Date(value.length === 10 ? `${value}T12:00:00` : value);
   return Number.isNaN(date.getTime())
     ? value
@@ -367,7 +367,7 @@ export function OutreachClient() {
                             colSpan={4}
                           >
                             No contacts yet. Start with a researched batch of
-                            5–10 people—not a giant list.
+                            5-10 people, not a giant list.
                           </td>
                         </tr>
                       )}
@@ -571,7 +571,7 @@ function PlaybookPanel({ playbook }: { playbook: Playbook | null }) {
           <h3 className="mt-6 text-sm font-semibold text-slate-200">Avoid</h3>
           <ul className="mt-3 space-y-2 text-sm leading-6 text-slate-400">
             {playbook.avoid.map((item) => (
-              <li key={item}>— {item}</li>
+              <li key={item}>- {item}</li>
             ))}
           </ul>
         </article>

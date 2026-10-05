@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&family=Source+Sans+3:wght@400;500;600;700&display=swap");
 @import "tailwindcss";
 @source "./**/*.{js,ts,jsx,tsx}";
 
@@ -21,10 +21,14 @@
   --primary-foreground: oklch(1 0 0);
   --border: oklch(0.922 0 0);
   --accent: oklch(0.97 0 0);
-  --brand-surface: #144bc6;
+  --paper: oklch(0.982 0.01 87);
+  --paper-strong: oklch(0.956 0.014 87);
+  --callout-surface: oklch(0.39 0.14 260);
+  --callout-muted: oklch(0.9 0.025 255);
+  --positive: oklch(0.58 0.14 155);
   --outline-background: var(--background);
   --outline-hover: var(--muted);
-  --radius: 0.625rem;
+  --radius: 0.5rem;
 }
 
 .dark {
@@ -42,7 +46,11 @@
   --primary-foreground: oklch(1 0 0);
   --border: oklch(1 0 0 / 10%);
   --accent: oklch(0.269 0 0);
-  --brand-surface: #176be7;
+  --paper: oklch(0.205 0.025 242);
+  --paper-strong: oklch(0.235 0.027 242);
+  --callout-surface: oklch(0.34 0.11 260);
+  --callout-muted: oklch(0.86 0.025 255);
+  --positive: oklch(0.73 0.13 155);
   --outline-background: oklch(1 0 0 / 4.5%);
   --outline-hover: oklch(1 0 0 / 7.5%);
 }
@@ -52,6 +60,7 @@
 }
 html {
   scroll-behavior: smooth;
+  scrollbar-color: var(--primary) var(--background);
 }
 body {
   margin: 0;
@@ -59,7 +68,7 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family:
-    Inter,
+    "Source Sans 3",
     ui-sans-serif,
     system-ui,
     -apple-system,
@@ -71,8 +80,8 @@ body {
 :is(h1, h2, h3, h4, h5, h6) {
   font-family: "Merriweather", Georgia, serif;
   font-weight: 700;
-  line-height: 1.04;
-  letter-spacing: -0.05em;
+  line-height: 1.08;
+  letter-spacing: -0.028em;
 }
 a {
   color: inherit;
@@ -145,8 +154,8 @@ button {
     color 0.2s;
 }
 .nav-link:hover {
-  background: var(--brand-surface);
-  color: var(--primary-foreground);
+  background: var(--muted);
+  color: var(--foreground);
 }
 .theme-toggle {
   width: 2.5rem;
@@ -158,11 +167,19 @@ button {
   background: transparent;
   color: var(--foreground);
   cursor: pointer;
-  font-size: 1.05rem;
 }
 .theme-toggle:hover {
-  background: var(--brand-surface);
-  color: var(--primary-foreground);
+  background: var(--muted);
+  color: var(--foreground);
+}
+.theme-toggle svg {
+  width: 1.15rem;
+  height: 1.15rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.75;
 }
 .nav-link:focus-visible,
 .theme-toggle:focus-visible,
@@ -217,7 +234,7 @@ button {
   position: relative;
   isolation: isolate;
   overflow: hidden;
-  padding: 11.25rem 0 7.75rem;
+  padding: 11rem 0 8.5rem;
   border-bottom: 1px solid color-mix(in oklab, var(--border) 65%, transparent);
   background: var(--background);
 }
@@ -250,14 +267,20 @@ button {
   font-size: 1rem;
 }
 h1 {
-  max-width: 64rem;
+  max-width: 58rem;
   margin: 0;
-  font-size: clamp(2.4rem, 5.5vw, 4rem);
+  font-size: clamp(2.55rem, 5.8vw, 4.6rem);
+  line-height: 1.025;
+  letter-spacing: -0.032em;
   text-wrap: balance;
 }
 .hero-copy {
-  max-width: 47rem;
-  margin: 2rem 0 0;
+  max-width: 58ch;
+  margin: 1.8rem 0 0;
+  color: color-mix(in oklab, var(--foreground) 76%, var(--background));
+  font-size: clamp(1.08rem, 2vw, 1.35rem);
+  font-weight: 500;
+  line-height: 1.55;
   text-wrap: balance;
 }
 .hero-actions {
@@ -270,180 +293,311 @@ h1 {
 }
 
 .report-section {
-  padding: 6.75rem 0;
-}
-.report-section {
+  padding: 7.5rem 0;
   border-bottom: 1px solid var(--border);
-  background: color-mix(in oklab, var(--primary) 2.5%, var(--background));
+  background: var(--paper);
 }
 .report-grid {
-  max-width: 58rem;
+  display: grid;
+  grid-template-columns: minmax(17rem, 0.72fr) minmax(31rem, 1.28fr);
+  gap: clamp(3.5rem, 6vw, 6rem);
+  align-items: center;
 }
 .report-copy h2 {
-  max-width: 46rem;
-  margin: 0 auto;
-  font-size: clamp(1.85rem, 3.8vw, 2.9rem);
-  text-align: center;
+  max-width: 15ch;
+  margin: 0;
+  font-size: clamp(2rem, 4vw, 3.25rem);
   text-wrap: balance;
 }
 .report-copy > p:last-of-type {
-  max-width: 48rem;
-  margin: 1.35rem auto 0;
+  max-width: 60ch;
+  margin: 1.45rem 0 0;
   color: var(--muted-foreground);
-  font-size: 1.02rem;
-  line-height: 1.75;
-  text-align: center;
-  text-wrap: balance;
+  line-height: 1.72;
 }
 .report-benefits {
-  margin: 3rem auto 0;
+  margin: 2.4rem 0 0;
   padding: 0;
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 2.5rem;
   list-style: none;
-  text-align: center;
 }
 .report-benefits li {
-  display: block;
+  padding: 1.05rem 0;
+  border-top: 1px solid color-mix(in oklab, var(--foreground) 12%, transparent);
+}
+.report-benefits li:last-child {
+  border-bottom: 1px solid
+    color-mix(in oklab, var(--foreground) 12%, transparent);
 }
 .report-benefits strong {
   display: block;
-  font-size: 0.96rem;
+  font-weight: 700;
 }
 .report-benefits p {
-  margin: 0.35rem 0 0;
+  margin: 0.3rem 0 0;
   color: var(--muted-foreground);
-  font-size: 0.87rem;
-  line-height: 1.6;
+  line-height: 1.55;
 }
-.report-preview {
+.open-source-proof {
+  margin-top: 1.4rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.55rem;
+  color: var(--muted-foreground);
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+.open-source-proof > span[aria-hidden] {
+  width: 0.2rem;
+  height: 0.2rem;
+  border-radius: 999px;
+  background: var(--muted-foreground);
+  opacity: 0.5;
+}
+.open-source-proof a {
+  text-decoration: underline;
+  text-decoration-color: color-mix(
+    in oklab,
+    var(--muted-foreground) 45%,
+    transparent
+  );
+  text-underline-offset: 0.2em;
+}
+.open-source-proof a:hover {
+  color: var(--foreground);
+  text-decoration-color: currentColor;
+}
+
+.artifact-composition {
+  min-width: 0;
   overflow: hidden;
-  border: 1px solid color-mix(in oklab, var(--primary) 24%, var(--border));
-  border-radius: 1.2rem;
+  border: 1px solid var(--border);
+  border-radius: 1rem;
   background: var(--card);
-  box-shadow: 0 28px 70px rgb(0 0 0 / 9%);
 }
-.report-preview-header,
-.report-destinations {
-  padding: 1.25rem 1.4rem;
+.artifact-composition-header {
+  min-height: 4.75rem;
+  padding: 1rem 1.25rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-}
-.report-preview-header {
   border-bottom: 1px solid var(--border);
 }
-.report-preview-header p,
-.report-parameters > p,
-.report-date,
-.report-destinations > span {
-  margin: 0;
+.artifact-composition-header > div {
+  display: grid;
+  gap: 0.22rem;
+}
+.artifact-composition-header > div > span,
+.artifact-library-heading,
+.report-sheet-header > div > span,
+.report-sheet-date,
+.report-sheet-metrics span,
+.report-chart-scale,
+.report-sheet-footer {
   color: var(--muted-foreground);
-  font-size: 0.7rem;
-  font-weight: 690;
-  letter-spacing: 0.055em;
+  font-size: 0.68rem;
+  font-weight: 650;
+  letter-spacing: 0.045em;
   text-transform: uppercase;
 }
-.report-preview-header h3 {
-  margin: 0.3rem 0 0;
-  font-size: 1.08rem;
+.artifact-composition-header strong {
+  font-size: 0.92rem;
 }
-.report-status {
-  padding: 0.35rem 0.6rem;
-  border-radius: 999px;
-  background: color-mix(in oklab, var(--primary) 10%, var(--card));
-  color: var(--primary);
-  font-size: 0.7rem;
-  font-weight: 740;
-}
-.report-schedule {
-  padding: 0.85rem 1.4rem;
-  display: flex;
+.composition-state {
+  padding: 0.38rem 0.6rem;
+  display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  border-bottom: 1px solid var(--border);
-  color: var(--muted-foreground);
-  font-size: 0.78rem;
+  gap: 0.4rem;
+  border-radius: 999px;
+  background: color-mix(in oklab, var(--positive) 10%, var(--card));
+  color: color-mix(in oklab, var(--positive) 88%, var(--foreground));
+  font-size: 0.68rem;
+  font-weight: 700;
 }
-.report-schedule span {
-  color: var(--primary);
-  font-size: 1rem;
+.composition-state > span {
+  width: 0.42rem;
+  height: 0.42rem;
+  border-radius: 999px;
+  background: var(--positive);
 }
-.report-parameters {
-  padding: 1.15rem 1.4rem 1.3rem;
-  border-bottom: 1px solid var(--border);
-  background: color-mix(in oklab, var(--muted) 42%, var(--card));
-}
-.report-parameters > div {
-  margin-top: 0.8rem;
+.artifact-composition-body {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 0.55rem;
+  grid-template-columns: minmax(10rem, 0.8fr) 3rem minmax(15rem, 1.2fr);
+  min-height: 27rem;
 }
-.report-parameters div > span {
-  min-width: 0;
-  padding: 0.7rem 0.75rem;
-  border: 1px solid var(--border);
-  border-radius: 0.6rem;
-  background: var(--card);
-  font-size: 0.76rem;
-  font-weight: 650;
+.artifact-library {
+  padding: 1.35rem 0 1.35rem 1.25rem;
+  background: color-mix(in oklab, var(--paper) 70%, var(--card));
 }
-.report-parameters small {
-  margin-bottom: 0.3rem;
-  display: block;
-  color: var(--muted-foreground);
-  font-size: 0.62rem;
-  font-weight: 570;
-}
-.report-results {
-  padding: 1.4rem;
-}
-.report-metrics {
-  margin-top: 0.8rem;
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+.artifact-library-heading {
+  padding-right: 1rem;
+  display: flex;
+  justify-content: space-between;
   gap: 0.75rem;
 }
-.report-metrics div {
-  min-width: 0;
+.artifact-library-heading span:last-child {
+  color: var(--primary);
 }
-.report-metrics span {
-  display: block;
-  color: var(--muted-foreground);
-  font-size: 0.7rem;
+.artifact-list {
+  margin-top: 1rem;
 }
-.report-metrics strong {
-  margin-top: 0.25rem;
-  display: block;
-  font-size: 1.25rem;
-  letter-spacing: -0.035em;
-}
-.report-summary {
-  margin: 1.25rem 0 0;
-  padding: 1rem;
-  border-left: 2px solid var(--primary);
-  background: color-mix(in oklab, var(--primary) 5%, var(--card));
-  color: var(--muted-foreground);
-  font-size: 0.82rem;
-  line-height: 1.65;
-}
-.report-destinations {
+.artifact-source {
+  padding: 1rem 1rem 1rem 0;
+  display: grid;
+  grid-template-columns: 1.8rem minmax(0, 1fr);
+  gap: 0.7rem;
+  align-items: center;
   border-top: 1px solid var(--border);
 }
-.report-destinations > div {
-  display: flex;
-  gap: 0.45rem;
+.artifact-source:last-child {
+  border-bottom: 1px solid var(--border);
 }
-.report-destinations > div span {
-  padding: 0.35rem 0.55rem;
-  border: 1px solid var(--border);
-  border-radius: 0.45rem;
+.artifact-source-mark {
+  width: 1.8rem;
+  height: 1.8rem;
+  display: grid;
+  place-items: center;
+  border: 1px solid color-mix(in oklab, var(--primary) 30%, var(--border));
+  border-radius: 0.4rem;
+  background: color-mix(in oklab, var(--primary) 7%, var(--card));
+}
+.artifact-source-mark::before,
+.artifact-source-mark::after,
+.artifact-source-mark > span {
+  content: "";
+  display: block;
+  width: 0.75rem;
+  height: 1px;
+  background: var(--primary);
+}
+.artifact-source-mark::before {
+  transform: translateY(0.23rem);
+}
+.artifact-source-mark::after {
+  width: 0.5rem;
+  transform: translateY(-0.23rem);
+}
+.artifact-source > div {
+  min-width: 0;
+}
+.artifact-source strong,
+.artifact-source > div > span {
+  display: block;
+}
+.artifact-source strong {
+  overflow: hidden;
+  font-size: 0.77rem;
+  font-weight: 700;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.artifact-source > div > span {
+  margin-top: 0.25rem;
   color: var(--muted-foreground);
+  font-size: 0.62rem;
+  line-height: 1.45;
+}
+.artifact-flow {
+  display: grid;
+  place-items: center;
+  color: color-mix(in oklab, var(--primary) 55%, var(--border));
+  background: color-mix(in oklab, var(--paper) 70%, var(--card));
+}
+.artifact-flow svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+.artifact-flow path {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1;
+  vector-effect: non-scaling-stroke;
+}
+.artifact-flow circle {
+  fill: var(--primary);
+}
+.report-sheet {
+  min-width: 0;
+  padding: 1.4rem;
+  background: var(--card);
+}
+.report-sheet-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.report-sheet-header h3 {
+  margin: 0.35rem 0 0;
+  font-size: 1.12rem;
+  letter-spacing: -0.02em;
+}
+.report-sheet-date {
+  white-space: nowrap;
+}
+.report-sheet-metrics {
+  margin-top: 1.5rem;
+  padding: 1.05rem 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+.report-sheet-metrics > div {
+  min-width: 0;
+  padding: 0 0.8rem;
+  border-left: 1px solid var(--border);
+}
+.report-sheet-metrics > div:first-child {
+  padding-left: 0;
+  border-left: 0;
+}
+.report-sheet-metrics strong {
+  margin-top: 0.35rem;
+  display: block;
+  font-size: clamp(1.05rem, 2.3vw, 1.42rem);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.025em;
+}
+.report-chart {
+  padding: 1.35rem 0 1.15rem;
+}
+.report-chart-scale {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.report-chart-bars {
+  height: 8.6rem;
+  margin-top: 1rem;
+  padding: 0 0.4rem;
+  display: flex;
+  align-items: flex-end;
+  gap: clamp(0.45rem, 1.2vw, 0.8rem);
+  border-bottom: 1px solid var(--border);
+}
+.report-chart-bars span {
+  width: 100%;
+  height: var(--bar-size);
+  border-radius: 0.25rem 0.25rem 0 0;
+  background: color-mix(in oklab, var(--primary) 70%, var(--paper));
+}
+.report-chart-bars span:nth-child(2n) {
+  background: color-mix(in oklab, var(--primary) 38%, var(--paper));
+}
+.report-sheet-footer {
+  padding-top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  border-top: 1px solid var(--border);
+}
+.report-sheet-footer strong {
+  color: var(--primary);
   font-size: 0.7rem;
-  font-weight: 670;
 }
 .cta-card h2 {
   margin: 0;
@@ -451,50 +605,51 @@ h1 {
   text-wrap: balance;
 }
 .cta-section {
-  padding: 1rem 0 6rem;
+  padding: 2.5rem 0 7rem;
 }
 .cta-card {
   max-width: 67.5rem;
-  padding: 4.25rem 3rem;
-  display: flex;
-  flex-direction: column;
+  padding: 3.8rem 4rem;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-rows: auto auto;
+  column-gap: 4rem;
   align-items: center;
-  border-radius: 2rem;
-  background: var(--brand-surface);
+  border-radius: 1rem;
+  background: var(--callout-surface);
   color: white;
-  text-align: center;
-  box-shadow: 0 24px 58px
-    color-mix(in oklab, var(--brand-surface) 24%, transparent);
+  text-align: left;
 }
 .cta-card h2 {
-  max-width: 45rem;
+  max-width: 14ch;
 }
 .cta-card > p {
   max-width: 60ch;
-  margin: 1.35rem 0 0;
-  color: rgba(255, 255, 255, 0.78);
-  font-size: 1.125rem;
+  margin: 1.15rem 0 0;
+  color: var(--callout-muted);
+  font-size: 1.02rem;
   line-height: 1.65;
 }
 .cta-actions {
-  margin-top: 2rem;
+  grid-column: 2;
+  grid-row: 1 / 3;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 1rem;
 }
 .button-inverse {
-  border-color: white;
+  border-color: transparent;
   background: white;
-  color: oklch(0.145 0 0);
+  color: oklch(0.24 0.06 260);
   box-shadow: none;
 }
 .button-inverse:hover {
-  border-color: oklch(0.97 0 0);
-  background: oklch(0.97 0 0);
+  border-color: transparent;
+  background: oklch(0.95 0.015 255);
 }
 .cta-login {
-  color: rgba(255, 255, 255, 0.82);
+  color: var(--callout-muted);
   font-size: 0.82rem;
   font-weight: 620;
 }
@@ -660,7 +815,15 @@ h1 {
     display: none;
   }
   .report-section {
-    padding: 5.25rem 0;
+    padding: 5.75rem 0;
+  }
+  .report-grid {
+    max-width: 44rem;
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+  }
+  .report-copy h2 {
+    max-width: 18ch;
   }
 }
 
@@ -682,9 +845,8 @@ h1 {
     display: none;
   }
   .hero {
-    min-height: 43rem;
-    padding-top: 8.75rem;
-    padding-bottom: 5.5rem;
+    padding-top: 8.5rem;
+    padding-bottom: 5.75rem;
   }
   .hero-actions {
     width: 100%;
@@ -694,9 +856,7 @@ h1 {
     width: 100%;
   }
   .report-benefits {
-    max-width: 30rem;
-    grid-template-columns: 1fr;
-    gap: 1.75rem;
+    max-width: 32rem;
   }
   .legal-main {
     padding: 4rem 0 5rem;
@@ -705,13 +865,62 @@ h1 {
     padding-bottom: 2.25rem;
   }
 
-  .report-parameters > div,
-  .report-metrics {
+  .artifact-composition-header {
+    align-items: flex-start;
+  }
+  .artifact-composition-body {
     grid-template-columns: 1fr;
+    min-height: 0;
+  }
+  .artifact-library {
+    padding: 1.25rem;
+  }
+  .artifact-source {
+    padding-right: 0;
+  }
+  .artifact-flow {
+    position: relative;
+    height: 3rem;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+  .artifact-flow svg {
+    display: none;
+  }
+  .artifact-flow::before {
+    content: "";
+    width: 1px;
+    height: 100%;
+    background: color-mix(in oklab, var(--primary) 55%, var(--border));
+  }
+  .artifact-flow::after {
+    content: "";
+    position: absolute;
+    bottom: 0.65rem;
+    width: 0.42rem;
+    height: 0.42rem;
+    border-right: 1px solid var(--primary);
+    border-bottom: 1px solid var(--primary);
+    transform: rotate(45deg);
+  }
+  .report-sheet {
+    padding: 1.25rem;
   }
   .cta-card {
     width: calc(100% - 2rem);
-    padding: 3.5rem 1.4rem;
+    padding: 2.9rem 1.5rem;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 0;
+  }
+  .cta-card h2 {
+    max-width: 16ch;
+  }
+  .cta-actions {
+    grid-column: 1;
+    grid-row: auto;
+    margin-top: 1.8rem;
+    align-items: flex-start;
   }
   .footer-inner {
     grid-template-columns: 1fr;

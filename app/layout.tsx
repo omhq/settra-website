@@ -39,7 +39,7 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-  icons: { icon: "/favicon.png" },
+  icons: { icon: "/favicon.svg" },
   openGraph: {
     type: "website",
     url: "/",
@@ -72,7 +72,7 @@ const structuredData = {
       "@id": `${SITE_URL}/#organization`,
       name: "Settra",
       url: SITE_URL,
-      logo: `${SITE_URL}/favicon.png`,
+      logo: `${SITE_URL}/favicon.svg`,
       sameAs: ["https://github.com/omhq/settra"],
     },
     {

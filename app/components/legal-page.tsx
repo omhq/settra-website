@@ -1,15 +1,17 @@
 /* eslint-disable @next/next/no-img-element -- vinext's current next/image shim breaks client hydration. */
 
 import type { ReactNode } from "react";
-import Link from "next/link";
+import { SiteHeader } from "./site-header";
 
-const APP_URL = "https://app.settra.io";
 const SUPPORT_EMAIL = "support@outermeasure.com";
 
 type LegalPageProps = {
   title: string;
   description: string;
   dateLabel?: string | null;
+  hideTitle?: boolean;
+  mainClassName?: string;
+  documentClassName?: string;
   children: ReactNode;
 };
 
@@ -17,48 +19,24 @@ export function LegalPage({
   title,
   description,
   dateLabel = "Effective August 27, 2026",
+  hideTitle = false,
+  mainClassName = "",
+  documentClassName = "",
   children,
 }: LegalPageProps) {
   return (
     <div className="site-shell legal-shell">
-      <header className="site-header legal-site-header">
-        <Link className="wordmark" href="/" aria-label="Settra home">
-          <img
-            className="logo logo-light"
-            src="/settra-logo-light.png"
-            alt="Settra"
-            width="568"
-            height="160"
-          />
-          <img
-            className="logo logo-dark"
-            src="/settra-logo-dark.png"
-            alt="Settra"
-            width="568"
-            height="160"
-          />
-        </Link>
+      <SiteHeader solid />
 
-        <div className="header-actions">
-          <Link className="nav-link" href="/">
-            Home
-          </Link>
-          <a className="nav-link sign-in-link" href={APP_URL + "/login"}>
-            Sign in
-          </a>
-          <Link className="button button-small" href="/#design-partners">
-            Help shape Settra
-          </Link>
-        </div>
-      </header>
-
-      <main className="legal-main">
-        <article className="container legal-document">
-          <header className="legal-title">
-            <h1>{title}</h1>
-            <p>{description}</p>
-            {dateLabel && <p className="legal-date">{dateLabel}</p>}
-          </header>
+      <main className={`legal-main ${mainClassName}`}>
+        <article className={`container legal-document ${documentClassName}`}>
+          {!hideTitle && (
+            <header className="legal-title">
+              <h1>{title}</h1>
+              <p>{description}</p>
+              {dateLabel && <p className="legal-date">{dateLabel}</p>}
+            </header>
+          )}
           {children}
         </article>
       </main>
@@ -85,6 +63,7 @@ export function LegalPage({
           <nav aria-label="Legal navigation">
             <a href="/connect">Connect your AI</a>
             <a href="/support">Support</a>
+            <a href="/contact">Contact</a>
             <a href="/privacy">Privacy</a>
             <a href="/terms">Terms</a>
             <a href={"mailto:" + SUPPORT_EMAIL}>Email</a>

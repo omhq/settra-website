@@ -1,33 +1,9 @@
-"use client";
-
 /* eslint-disable @next/next/no-img-element -- vinext's current next/image shim breaks client hydration. */
 
-import { useSyncExternalStore } from "react";
-import Link from "next/link";
+import { SiteHeader } from "./components/site-header";
 
 const APP_URL = "https://app.settra.io";
 const GITHUB_URL = "https://github.com/omhq/settra";
-const DESIGN_PARTNER_URL =
-  "mailto:support@outermeasure.com?subject=Settra%20design%20partner";
-const THEME_KEY = "settra-site-theme";
-const THEME_EVENT = "settra-site-theme-change";
-
-function ThemeIcon({ dark }: { dark: boolean }) {
-  if (dark) {
-    return (
-      <svg viewBox="0 0 24 24" aria-hidden="true">
-        <circle cx="12" cy="12" r="3.75" />
-        <path d="M12 2.25v2M12 19.75v2M4.2 4.2l1.42 1.42M18.38 18.38l1.42 1.42M2.25 12h2M19.75 12h2M4.2 19.8l1.42-1.42M18.38 5.62 19.8 4.2" />
-      </svg>
-    );
-  }
-
-  return (
-    <svg viewBox="0 0 24 24" aria-hidden="true">
-      <path d="M20.5 15.15A8.15 8.15 0 0 1 8.85 3.5 8.5 8.5 0 1 0 20.5 15.15Z" />
-    </svg>
-  );
-}
 
 function ChevronIcon() {
   return (
@@ -37,93 +13,10 @@ function ChevronIcon() {
   );
 }
 
-function readDarkMode() {
-  const stored = window.localStorage.getItem(THEME_KEY);
-  if (stored === "dark" || stored === "light") return stored === "dark";
-  return window.matchMedia("(prefers-color-scheme: dark)").matches;
-}
-
-function applyDarkMode(dark: boolean) {
-  document.documentElement.classList.toggle("dark", dark);
-  document.documentElement.style.colorScheme = dark ? "dark" : "light";
-}
-
-function subscribeToTheme(callback: () => void) {
-  const media = window.matchMedia("(prefers-color-scheme: dark)");
-  const handleChange = () => {
-    applyDarkMode(readDarkMode());
-    callback();
-  };
-
-  window.addEventListener("storage", handleChange);
-  window.addEventListener(THEME_EVENT, handleChange);
-  media.addEventListener("change", handleChange);
-
-  return () => {
-    window.removeEventListener("storage", handleChange);
-    window.removeEventListener(THEME_EVENT, handleChange);
-    media.removeEventListener("change", handleChange);
-  };
-}
-
 export default function Home() {
-  const dark = useSyncExternalStore(
-    subscribeToTheme,
-    readDarkMode,
-    () => false,
-  );
-
-  function toggleTheme() {
-    const next = !dark;
-    localStorage.setItem(THEME_KEY, next ? "dark" : "light");
-    applyDarkMode(next);
-    window.dispatchEvent(new Event(THEME_EVENT));
-  }
-
   return (
     <div className="site-shell">
-      <header className="site-header">
-        <Link className="wordmark" href="/" aria-label="Settra home">
-          <img
-            className="logo logo-light"
-            src="/settra-logo-light.png"
-            alt="Settra"
-            width="568"
-            height="160"
-          />
-          <img
-            className="logo logo-dark"
-            src="/settra-logo-dark.png"
-            alt="Settra"
-            width="568"
-            height="160"
-          />
-        </Link>
-
-        <div className="header-actions">
-          <nav className="primary-nav" aria-label="Primary navigation">
-            <a className="nav-link" href="#how-it-works">
-              How it works
-            </a>
-            <a className="nav-link" href="/connect">
-              Connect your AI
-            </a>
-          </nav>
-          <a className="nav-link sign-in-link" href={`${APP_URL}/login`}>
-            Sign in
-          </a>
-          <button
-            className="theme-toggle"
-            onClick={toggleTheme}
-            aria-label={dark ? "Switch to light mode" : "Switch to dark mode"}
-          >
-            <ThemeIcon dark={dark} />
-          </button>
-          <a className="button button-small" href="#design-partners">
-            Help shape Settra
-          </a>
-        </div>
-      </header>
+      <SiteHeader />
 
       <main id="top">
         <section className="hero">
@@ -136,7 +29,7 @@ export default function Home() {
               changes.
             </p>
             <div className="hero-actions">
-              <a className="button" href="#design-partners">
+              <a className="button" href="/contact">
                 Help shape Settra <span aria-hidden="true">→</span>
               </a>
               <a className="button button-outline" href="#how-it-works">
@@ -260,7 +153,7 @@ export default function Home() {
               what helps, and what still needs work.
             </p>
             <div className="cta-actions">
-              <a className="button button-inverse" href={DESIGN_PARTNER_URL}>
+              <a className="button button-inverse" href="/contact">
                 Tell me about your report <span aria-hidden="true">→</span>
               </a>
               <a className="cta-login" href={`${APP_URL}/login`}>
@@ -323,6 +216,7 @@ export default function Home() {
           <nav aria-label="Footer navigation">
             <a href="/connect">Connect your AI</a>
             <a href="/support">Support</a>
+            <a href="/contact">Contact</a>
             <a href={GITHUB_URL} target="_blank" rel="noreferrer">
               GitHub
             </a>

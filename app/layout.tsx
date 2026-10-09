@@ -3,9 +3,9 @@ import "./globals.css";
 
 const SITE_URL = "https://www.settra.io";
 const GOOGLE_TAG_ID = "G-6JDD6KVW4W";
-const TITLE = "Settra: Turn AI Answers into Reusable Data Artifacts";
+const TITLE = "Settra - Reusable reports from spreadsheet data";
 const DESCRIPTION =
-  "Turn AI answers into reusable data artifacts your team can rerun, share, and build on as the data changes.";
+  "Use ChatGPT or Claude to create reusable data artifacts from spreadsheets. Save the method behind a report and run it again with fresh data.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   keywords: [
     "reusable data artifacts",
     "AI data artifacts",
-    "AI business answers",
+    "recurring spreadsheet reports",
     "repeatable data analysis",
     "AI reporting",
     "self-service analytics",
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
         url: "/og-data-artifacts.png",
         width: 1200,
         height: 630,
-        alt: "Settra — reusable data artifacts from AI answers",
+        alt: "Settra - save the method behind your reports",
       },
     ],
   },

@@ -20,13 +20,13 @@
   <image href="settra-logo-light.png" x="70" y="66" width="238" height="67"/>
 
   <text x="70" y="225" fill="#171717" font-family="Inter, Arial, sans-serif" font-size="62" font-weight="750" letter-spacing="-2.5">
-    Turn AI answers into
+    Save the method
   </text>
   <text x="70" y="294" fill="#171717" font-family="Inter, Arial, sans-serif" font-size="62" font-weight="750" letter-spacing="-2.5">
-    reusable data artifacts.
+    behind your reports.
   </text>
   <text x="72" y="347" fill="#667085" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="500">
-    Rerun, share, and build on every answer as your data changes.
+    Reusable data artifacts. Fresh data. The same saved method.
   </text>
 
   <g fill="none" stroke="#2463eb" stroke-width="2" opacity=".38">
@@ -62,6 +62,6 @@
   </g>
 
   <text x="70" y="582" fill="#2463eb" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="700" letter-spacing="2">
-    ASK  ·  SAVE  ·  RERUN  ·  BUILD
+    CONNECT  ·  DEFINE  ·  REVIEW  ·  RERUN
   </text>
 </svg>

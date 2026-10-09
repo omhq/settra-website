@@ -36,7 +36,7 @@ To share this with another person, run the Compose stack on a private host with
 a persistent Docker volume, use the real API URL as
 `NEXT_PUBLIC_OUTREACH_API_URL` during the website build, and include the website
 URL in `OUTREACH_ALLOWED_ORIGINS`. Add authentication before exposing either
-service to the public internet—the starter deliberately has no sign-in system.
+service to the public internet, the starter deliberately has no sign-in system.
 
 The local Compose default permits both `localhost:3001` and `127.0.0.1:3001`,
 which browsers treat as separate origins.

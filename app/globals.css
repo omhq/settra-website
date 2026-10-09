@@ -299,7 +299,7 @@ h1 {
 }
 .report-grid {
   display: grid;
-  grid-template-columns: minmax(17rem, 0.72fr) minmax(31rem, 1.28fr);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
   gap: clamp(3.5rem, 6vw, 6rem);
   align-items: center;
 }
@@ -316,7 +316,7 @@ h1 {
   line-height: 1.72;
 }
 .report-benefits {
-  margin: 2.4rem 0 0;
+  margin: 0;
   padding: 0;
   list-style: none;
 }
@@ -363,241 +363,136 @@ h1 {
   );
   text-underline-offset: 0.2em;
 }
+.open-source-proof .github-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+.github-icon {
+  width: 0.9rem;
+  height: 0.9rem;
+  flex: 0 0 auto;
+  object-fit: contain;
+  opacity: 0.75;
+}
+.dark .github-icon {
+  filter: invert(1);
+}
 .open-source-proof a:hover {
   color: var(--foreground);
   text-decoration-color: currentColor;
 }
 
-.artifact-composition {
-  min-width: 0;
-  overflow: hidden;
-  border: 1px solid var(--border);
-  border-radius: 1rem;
-  background: var(--card);
-}
-.artifact-composition-header {
-  min-height: 4.75rem;
-  padding: 1rem 1.25rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  border-bottom: 1px solid var(--border);
-}
-.artifact-composition-header > div {
-  display: grid;
-  gap: 0.22rem;
-}
-.artifact-composition-header > div > span,
-.artifact-library-heading,
-.report-sheet-header > div > span,
-.report-sheet-date,
-.report-sheet-metrics span,
-.report-chart-scale,
-.report-sheet-footer {
+.hero-note {
+  max-width: 55ch;
+  margin: 1.25rem 0 0;
   color: var(--muted-foreground);
-  font-size: 0.68rem;
-  font-weight: 650;
-  letter-spacing: 0.045em;
-  text-transform: uppercase;
+  font-size: 0.9rem;
+  line-height: 1.5;
 }
-.artifact-composition-header strong {
-  font-size: 0.92rem;
+.reuse-section {
+  padding: 5.5rem 0 3rem;
 }
-.composition-state {
-  padding: 0.38rem 0.6rem;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  border-radius: 999px;
-  background: color-mix(in oklab, var(--positive) 10%, var(--card));
-  color: color-mix(in oklab, var(--positive) 88%, var(--foreground));
-  font-size: 0.68rem;
-  font-weight: 700;
+.reuse-copy {
+  max-width: 46rem;
 }
-.composition-state > span {
-  width: 0.42rem;
-  height: 0.42rem;
-  border-radius: 999px;
-  background: var(--positive);
+.reuse-copy h2,
+.faq-inner h2 {
+  margin: 0;
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  line-height: 1.2;
+  text-wrap: balance;
 }
-.artifact-composition-body {
-  display: grid;
-  grid-template-columns: minmax(10rem, 0.8fr) 3rem minmax(15rem, 1.2fr);
-  min-height: 27rem;
+.reuse-copy p,
+.faq-inner p {
+  margin: 1.25rem 0 0;
+  color: var(--muted-foreground);
+  line-height: 1.7;
 }
-.artifact-library {
-  padding: 1.35rem 0 1.35rem 1.25rem;
-  background: color-mix(in oklab, var(--paper) 70%, var(--card));
+.workflow-figure {
+  margin-block: 3rem 0;
 }
-.artifact-library-heading {
-  padding-right: 1rem;
+.workflow-graphic {
+  display: block;
+}
+.workflow-graphic img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.workflow-figure figcaption {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
-  gap: 0.75rem;
+  gap: 0.5rem 1.5rem;
+  margin-top: 1.25rem;
+  color: var(--muted-foreground);
+  font-size: 0.875rem;
+  line-height: 1.6;
 }
-.artifact-library-heading span:last-child {
+.workflow-figure figcaption a {
   color: var(--primary);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
 }
-.artifact-list {
-  margin-top: 1rem;
+.workflow-figure a:focus-visible {
+  outline: 3px solid var(--primary);
+  outline-offset: 4px;
 }
-.artifact-source {
-  padding: 1rem 1rem 1rem 0;
-  display: grid;
-  grid-template-columns: 1.8rem minmax(0, 1fr);
-  gap: 0.7rem;
-  align-items: center;
+.faq-section {
+  padding: 0 0 6rem;
+}
+.faq-inner {
+  max-width: 67.5rem;
+}
+.faq-inner h2 {
+  margin-bottom: 2rem;
+}
+.faq-inner details {
   border-top: 1px solid var(--border);
 }
-.artifact-source:last-child {
+.faq-inner details:last-child {
   border-bottom: 1px solid var(--border);
 }
-.artifact-source-mark {
-  width: 1.8rem;
-  height: 1.8rem;
-  display: grid;
-  place-items: center;
-  border: 1px solid color-mix(in oklab, var(--primary) 30%, var(--border));
-  border-radius: 0.4rem;
-  background: color-mix(in oklab, var(--primary) 7%, var(--card));
+.faq-inner details p {
+  max-width: 75ch;
+  margin: 0 0 1.5rem;
+  padding-left: 1.5rem;
 }
-.artifact-source-mark::before,
-.artifact-source-mark::after,
-.artifact-source-mark > span {
-  content: "";
-  display: block;
-  width: 0.75rem;
-  height: 1px;
-  background: var(--primary);
+.faq-inner summary {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding-block: 1.25rem;
+  cursor: pointer;
+  font-weight: 600;
+  list-style: none;
 }
-.artifact-source-mark::before {
-  transform: translateY(0.23rem);
+.faq-inner summary::-webkit-details-marker {
+  display: none;
 }
-.artifact-source-mark::after {
-  width: 0.5rem;
-  transform: translateY(-0.23rem);
-}
-.artifact-source > div {
-  min-width: 0;
-}
-.artifact-source strong,
-.artifact-source > div > span {
-  display: block;
-}
-.artifact-source strong {
-  overflow: hidden;
-  font-size: 0.77rem;
-  font-weight: 700;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-.artifact-source > div > span {
-  margin-top: 0.25rem;
-  color: var(--muted-foreground);
-  font-size: 0.62rem;
-  line-height: 1.45;
-}
-.artifact-flow {
-  display: grid;
-  place-items: center;
-  color: color-mix(in oklab, var(--primary) 55%, var(--border));
-  background: color-mix(in oklab, var(--paper) 70%, var(--card));
-}
-.artifact-flow svg {
-  width: 100%;
-  height: 100%;
-  overflow: visible;
-}
-.artifact-flow path {
+.faq-chevron {
+  width: 1rem;
+  height: 1rem;
+  flex: 0 0 auto;
   fill: none;
   stroke: currentColor;
-  stroke-width: 1;
-  vector-effect: non-scaling-stroke;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.75;
+  transition: transform 0.18s ease-out;
 }
-.artifact-flow circle {
-  fill: var(--primary);
+.faq-inner details[open] .faq-chevron {
+  transform: rotate(90deg);
 }
-.report-sheet {
-  min-width: 0;
-  padding: 1.4rem;
-  background: var(--card);
-}
-.report-sheet-header {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 1rem;
-}
-.report-sheet-header h3 {
-  margin: 0.35rem 0 0;
-  font-size: 1.12rem;
-  letter-spacing: -0.02em;
-}
-.report-sheet-date {
-  white-space: nowrap;
-}
-.report-sheet-metrics {
-  margin-top: 1.5rem;
-  padding: 1.05rem 0;
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-}
-.report-sheet-metrics > div {
-  min-width: 0;
-  padding: 0 0.8rem;
-  border-left: 1px solid var(--border);
-}
-.report-sheet-metrics > div:first-child {
-  padding-left: 0;
-  border-left: 0;
-}
-.report-sheet-metrics strong {
-  margin-top: 0.35rem;
-  display: block;
-  font-size: clamp(1.05rem, 2.3vw, 1.42rem);
-  font-variant-numeric: tabular-nums;
-  letter-spacing: -0.025em;
-}
-.report-chart {
-  padding: 1.35rem 0 1.15rem;
-}
-.report-chart-scale {
-  display: flex;
-  justify-content: space-between;
-  gap: 1rem;
-}
-.report-chart-bars {
-  height: 8.6rem;
-  margin-top: 1rem;
-  padding: 0 0.4rem;
-  display: flex;
-  align-items: flex-end;
-  gap: clamp(0.45rem, 1.2vw, 0.8rem);
-  border-bottom: 1px solid var(--border);
-}
-.report-chart-bars span {
-  width: 100%;
-  height: var(--bar-size);
-  border-radius: 0.25rem 0.25rem 0 0;
-  background: color-mix(in oklab, var(--primary) 70%, var(--paper));
-}
-.report-chart-bars span:nth-child(2n) {
-  background: color-mix(in oklab, var(--primary) 38%, var(--paper));
-}
-.report-sheet-footer {
-  padding-top: 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  border-top: 1px solid var(--border);
-}
-.report-sheet-footer strong {
+.faq-inner a {
   color: var(--primary);
-  font-size: 0.7rem;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+.faq-inner :is(summary, a):focus-visible {
+  outline: 3px solid var(--primary);
+  outline-offset: 4px;
 }
 .cta-card h2 {
   margin: 0;
@@ -621,7 +516,7 @@ h1 {
   text-align: left;
 }
 .cta-card h2 {
-  max-width: 14ch;
+  max-width: 20ch;
 }
 .cta-card > p {
   max-width: 60ch;
@@ -865,47 +760,6 @@ h1 {
     padding-bottom: 2.25rem;
   }
 
-  .artifact-composition-header {
-    align-items: flex-start;
-  }
-  .artifact-composition-body {
-    grid-template-columns: 1fr;
-    min-height: 0;
-  }
-  .artifact-library {
-    padding: 1.25rem;
-  }
-  .artifact-source {
-    padding-right: 0;
-  }
-  .artifact-flow {
-    position: relative;
-    height: 3rem;
-    border-top: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
-  }
-  .artifact-flow svg {
-    display: none;
-  }
-  .artifact-flow::before {
-    content: "";
-    width: 1px;
-    height: 100%;
-    background: color-mix(in oklab, var(--primary) 55%, var(--border));
-  }
-  .artifact-flow::after {
-    content: "";
-    position: absolute;
-    bottom: 0.65rem;
-    width: 0.42rem;
-    height: 0.42rem;
-    border-right: 1px solid var(--primary);
-    border-bottom: 1px solid var(--primary);
-    transform: rotate(45deg);
-  }
-  .report-sheet {
-    padding: 1.25rem;
-  }
   .cta-card {
     width: calc(100% - 2rem);
     padding: 2.9rem 1.5rem;

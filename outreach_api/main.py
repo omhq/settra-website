@@ -369,55 +369,62 @@ def dashboard() -> dict:
 @app.get("/api/playbook")
 def playbook() -> dict:
     return {
-        "positioning": "Settra makes the spreadsheet data your team already runs on safe and dependable for AI assistants and automated agents.",
+        "positioning": "Settra saves the method behind a recurring spreadsheet report as an artifact, so you can run it again with fresh data from ChatGPT or Claude. We are looking for design partners to explore one real report together.",
         "segments": [
             {
-                "name": "Operations-led SMBs",
-                "fit": "20–250 people with critical operating trackers, project plans, fulfillment data, or customer lists still managed in Google Sheets.",
-                "buyers": "COO, Head of Operations, Operations Manager, Chief of Staff, Founder.",
-                "why_now": "They want AI to reduce reporting and follow-up work but cannot trust a chatbot to interpret changing spreadsheets on its own.",
+                "name": "Start here: independent RevOps consultants",
+                "fit": "Independent consultants and small consultancies that personally prepare recurring client reports from spreadsheets or exports.",
+                "buyers": "RevOps consultant, fractional RevOps lead, or consultancy founder doing the reporting.",
+                "why_now": "A recurring client deliverable is a concrete workflow to learn about. Start with ten profiles and select up to five using evidence; this audience is a hypothesis to test.",
             },
             {
-                "name": "Finance and revenue operations",
-                "fit": "Teams maintaining forecasts, pipeline, targets, commissions, or actual-versus-plan reporting in spreadsheets.",
-                "buyers": "Head of Finance, RevOps leader, FP&A lead, Sales Operations, CFO at a smaller company.",
-                "why_now": "Recurring questions need one approved definition of metrics such as active customer, recognized revenue, or pipeline coverage.",
+                "name": "Later: operations and finance teams",
+                "fit": "Operations-led companies of roughly 20–250 people, or finance and revenue operations teams, with recurring spreadsheet reports.",
+                "buyers": "Operations Manager, Head of Operations, Chief of Staff, RevOps, Sales Operations, or FP&A lead.",
+                "why_now": "Investigate a specific operations, pipeline, forecast, or actual-versus-plan report if the first audience is not a fit.",
             },
             {
-                "name": "AI-forward agencies and service firms",
-                "fit": "Teams with repeated client reporting and a culture of using Claude, ChatGPT, or internal agents.",
-                "buyers": "Agency owner, Director of Operations, Head of Delivery, automation lead.",
-                "why_now": "They need reusable reporting workflows across clients without rebuilding a bespoke analysis every time.",
+                "name": "Later: agencies and service firms",
+                "fit": "Teams that personally prepare repeated client reports from spreadsheet data.",
+                "buyers": "Agency owner, Head of Delivery, or Operations Director.",
+                "why_now": "Investigate what they rebuild for each reporting cycle. AI interest alone is not qualification.",
             },
         ],
         "signals": [
-            "Their profile, hiring posts, or company content mentions Google Sheets, spreadsheet-heavy reporting, operational dashboards, RevOps, FP&A, or manual reporting.",
-            "They are hiring for operations, revenue operations, analytics, finance operations, or automation while still small enough that data has not moved into a full warehouse.",
-            "They post about rolling out Claude, ChatGPT, AI agents, MCP, internal tools, or automation-especially with a practical operations focus.",
-            "They describe recurring client reports, status updates, forecasts, project tracking, pipeline reviews, or follow-up work that happens in spreadsheets.",
-            "A recent growth event, new service line, merger, or systems migration has made spreadsheet ownership and definitions harder to keep straight.",
+            "A verified current consulting role and a relevant service they personally deliver.",
+            "A specific recurring reporting signal: monthly pipeline reviews, reporting retainers, or ongoing KPI reports.",
+            "Spreadsheet or export-based inputs. Record unknown if this is not stated; ask rather than assume.",
+            "One service, post, or work example that gives you a specific reason to speak with this person. Save its source URL.",
         ],
         "avoid": [
-            "Companies with no material spreadsheet workflow or a mature, well-resourced data platform that already owns governed agent access.",
-            "People whose remit is only generic AI strategy-unless they own a concrete operational reporting workflow.",
-            "A connection request that pitches features. Start from one observed workflow or signal instead.",
+            "Strategy-only advisers or one-off CRM installers with no recurring reporting work.",
+            "People whose current dashboards already cover the job, or trials that require unsupported data or setup.",
+            "Promises about accuracy, time savings, pricing, or integrations that have not been verified. Dashboards and delivery channels remain planned until confirmed working.",
         ],
         "templates": [
             {
-                "name": "Connection request - operations",
-                "body": "Hi {first_name} - saw {specific signal}. I’m speaking with ops teams that still run key workflows in Sheets but want to use AI without letting it guess at the data. Would be glad to connect.",
+                "name": "Connection note",
+                "body": "Hi {first_name}, I’m building Settra for recurring spreadsheet reports. I saw your work in {specific area} and would like to learn how you handle client reporting. Open to connecting?",
             },
             {
-                "name": "After acceptance - diagnostic question",
-                "body": "Thanks for connecting, {first_name}. Quick question: when someone asks a recurring question about {workflow}, does the team still rebuild the answer from the spreadsheet each time, or do you have a dependable workflow for it already?",
+                "name": "After acceptance",
+                "body": "Thanks for connecting, {first_name}. Do you personally prepare any weekly or monthly client reports from spreadsheets or exports? I’m building an early product around saving the method behind those reports and trying to understand the work better.",
             },
             {
-                "name": "Follow-up - value hypothesis",
-                "body": "The reason I asked: we’re building Settra for teams that want AI assistants to answer from their Sheets using the same definitions and rules the team trusts-without giving the assistant raw access or asking it to improvise. If {workflow} is a pain point, I can show the 3-minute version.",
+                "name": "If they say yes",
+                "body": "Which report takes the most work to prepare, and what do you have to redo each time?",
             },
             {
-                "name": "Breakup / permission to close",
-                "body": "I haven’t heard back, so I’ll close the loop. If reliable AI answers from spreadsheet-based reporting becomes relevant later, I’m happy to share what we’re learning. Either way, no need to reply.",
+                "name": "Invite a conversation",
+                "body": "Would you be open to a 20-minute conversation about that report? I’d like to understand how you prepare it and where the work piles up. No need to share client data; a description or anonymized example is enough.",
+            },
+            {
+                "name": "One follow-up after 5–7 business days",
+                "body": "Hi {first_name}, following up on my question about recurring client reports. Is spreadsheet-based reporting part of your work, or have I picked the wrong person to ask?",
+            },
+            {
+                "name": "Design-partner invitation after discovering fit",
+                "body": "Settra is still early, but this sounds like a useful workflow to explore together. I can help turn one report into a reusable artifact in ChatGPT or Claude. Would you be interested in testing it over two reporting cycles and giving candid feedback? We can agree the scope and setup before starting.",
             },
         ],
     }

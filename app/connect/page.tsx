@@ -23,7 +23,7 @@ export const metadata: Metadata = {
         url: "/og-data-artifacts.png",
         width: 1200,
         height: 630,
-        alt: "Settra — reusable data artifacts from AI answers",
+        alt: "Settra - save the method behind your reports",
       },
     ],
   },
@@ -124,9 +124,9 @@ export default function ConnectPage() {
         <h2>Verify the connection</h2>
         <p>Start a new conversation and try these prompts in order:</p>
         <ol>
-          <li>“List the Apps available in Settra.”</li>
-          <li>“Open the first App and explain what it helps me do.”</li>
-          <li>“Run the App and show me the mini report.”</li>
+          <li>"List the artifacts available in Settra.”</li>
+          <li>"Open the first artifact and explain what it produces.”</li>
+          <li>"Run the artifact and show me the result.”</li>
         </ol>
         <p>
           Settra records privacy-safe request metrics, not the contents of your

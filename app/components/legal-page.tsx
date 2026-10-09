@@ -46,9 +46,9 @@ export function LegalPage({
           <a className="nav-link sign-in-link" href={APP_URL + "/login"}>
             Sign in
           </a>
-          <a className="button button-small" href={APP_URL + "/register"}>
-            Get started
-          </a>
+          <Link className="button button-small" href="/#design-partners">
+            Help shape Settra
+          </Link>
         </div>
       </header>
 
@@ -80,10 +80,10 @@ export function LegalPage({
               width="568"
               height="160"
             />
-            <p>Reusable answers from your data.</p>
+            <p>Save the method. Rerun the report.</p>
           </div>
           <nav aria-label="Legal navigation">
-            <a href="/connect">Connect</a>
+            <a href="/connect">Connect your AI</a>
             <a href="/support">Support</a>
             <a href="/privacy">Privacy</a>
             <a href="/terms">Terms</a>

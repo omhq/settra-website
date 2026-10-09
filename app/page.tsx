@@ -7,6 +7,8 @@ import Link from "next/link";
 
 const APP_URL = "https://app.settra.io";
 const GITHUB_URL = "https://github.com/omhq/settra";
+const DESIGN_PARTNER_URL =
+  "mailto:support@outermeasure.com?subject=Settra%20design%20partner";
 const THEME_KEY = "settra-site-theme";
 const THEME_EVENT = "settra-site-theme-change";
 
@@ -27,113 +29,11 @@ function ThemeIcon({ dark }: { dark: boolean }) {
   );
 }
 
-function ArtifactComposition() {
-  const artifacts = [
-    {
-      name: "Revenue by region",
-      detail: "Saved answer · Refreshes with data",
-    },
-    {
-      name: "Pipeline coverage",
-      detail: "Saved answer · Refreshes with data",
-    },
-    {
-      name: "Variance notes",
-      detail: "Saved answer · Ready to reuse",
-    },
-  ];
-
+function ChevronIcon() {
   return (
-    <div
-      className="artifact-composition"
-      aria-label="Illustration showing three reusable data artifacts combined into one shareable report"
-    >
-      <div className="artifact-composition-header">
-        <div>
-          <span>Workspace</span>
-          <strong>Quarterly review</strong>
-        </div>
-        <span className="composition-state">
-          <span aria-hidden="true" /> Ready to share
-        </span>
-      </div>
-
-      <div className="artifact-composition-body">
-        <div className="artifact-library">
-          <div className="artifact-library-heading">
-            <span>Reusable artifacts</span>
-            <span>3 selected</span>
-          </div>
-          <div className="artifact-list">
-            {artifacts.map((artifact) => (
-              <div className="artifact-source" key={artifact.name}>
-                <span className="artifact-source-mark" aria-hidden="true">
-                  <span />
-                </span>
-                <div>
-                  <strong>{artifact.name}</strong>
-                  <span>{artifact.detail}</span>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        <div className="artifact-flow" aria-hidden="true">
-          <svg viewBox="0 0 48 240" preserveAspectRatio="none">
-            <path d="M0 40 C24 40 24 120 48 120" />
-            <path d="M0 120 H48" />
-            <path d="M0 200 C24 200 24 120 48 120" />
-            <circle cx="47" cy="120" r="3" />
-          </svg>
-        </div>
-
-        <article className="report-sheet">
-          <header className="report-sheet-header">
-            <div>
-              <span>Example shared report</span>
-              <h3>Quarterly revenue review</h3>
-            </div>
-            <span className="report-sheet-date">Updated today</span>
-          </header>
-
-          <div className="report-sheet-metrics">
-            <div>
-              <span>Revenue</span>
-              <strong>$4.8M</strong>
-            </div>
-            <div>
-              <span>Pipeline</span>
-              <strong>3.2×</strong>
-            </div>
-            <div>
-              <span>Forecast</span>
-              <strong>+6%</strong>
-            </div>
-          </div>
-
-          <div className="report-chart" aria-hidden="true">
-            <div className="report-chart-scale">
-              <span>Regional performance</span>
-              <span>Q3</span>
-            </div>
-            <div className="report-chart-bars">
-              <span style={{ "--bar-size": "72%" } as React.CSSProperties} />
-              <span style={{ "--bar-size": "52%" } as React.CSSProperties} />
-              <span style={{ "--bar-size": "84%" } as React.CSSProperties} />
-              <span style={{ "--bar-size": "64%" } as React.CSSProperties} />
-              <span style={{ "--bar-size": "92%" } as React.CSSProperties} />
-              <span style={{ "--bar-size": "76%" } as React.CSSProperties} />
-            </div>
-          </div>
-
-          <footer className="report-sheet-footer">
-            <span>Built from 3 artifacts</span>
-            <strong>Share report</strong>
-          </footer>
-        </article>
-      </div>
-    </div>
+    <svg className="faq-chevron" viewBox="0 0 16 16" aria-hidden="true">
+      <path d="m6 3 5 5-5 5" />
+    </svg>
   );
 }
 
@@ -202,16 +102,11 @@ export default function Home() {
 
         <div className="header-actions">
           <nav className="primary-nav" aria-label="Primary navigation">
-            <a className="nav-link" href="/connect">
-              Connect
+            <a className="nav-link" href="#how-it-works">
+              How it works
             </a>
-            <a
-              className="nav-link"
-              href={GITHUB_URL}
-              target="_blank"
-              rel="noreferrer"
-            >
-              GitHub
+            <a className="nav-link" href="/connect">
+              Connect your AI
             </a>
           </nav>
           <a className="nav-link sign-in-link" href={`${APP_URL}/login`}>
@@ -224,8 +119,8 @@ export default function Home() {
           >
             <ThemeIcon dark={dark} />
           </button>
-          <a className="button button-small" href={`${APP_URL}/register`}>
-            Start building
+          <a className="button button-small" href="#design-partners">
+            Help shape Settra
           </a>
         </div>
       </header>
@@ -233,22 +128,19 @@ export default function Home() {
       <main id="top">
         <section className="hero">
           <div className="container hero-inner">
-            <h1>Turn AI answers into reusable data artifacts.</h1>
+            <h1>Save the method behind your reports.</h1>
             <p className="hero-copy">
-              Give your team answers they can rerun, share, and build on,
-              without starting over each time.
+              Use ChatGPT or Claude to turn your Google Sheets and spreadsheet
+              files into reusable data artifacts. Keep the sources,
+              calculations, and rules together, then rerun them when the data
+              changes.
             </p>
             <div className="hero-actions">
-              <a className="button" href={`${APP_URL}/register`}>
-                Start building <span aria-hidden="true">→</span>
+              <a className="button" href="#design-partners">
+                Help shape Settra <span aria-hidden="true">→</span>
               </a>
-              <a
-                className="button button-outline"
-                href={GITHUB_URL}
-                target="_blank"
-                rel="noreferrer"
-              >
-                View on GitHub
+              <a className="button button-outline" href="#how-it-works">
+                See how it works
               </a>
             </div>
           </div>
@@ -256,50 +148,18 @@ export default function Home() {
 
         <section
           className="report-section"
-          id="scheduled-reports"
+          id="how-it-works"
           aria-labelledby="report-title"
         >
           <div className="container report-grid">
             <div className="report-copy">
-              <h2 id="report-title">
-                The answer should not disappear in chat.
-              </h2>
+              <h2 id="report-title">Keep how the answer was made.</h2>
               <p>
-                Turn a business question into a reusable data artifact: ask,
-                review, and save the answer, then rerun it when the data changes
-                or combine it with other artifacts to build a shared view your
-                team can keep using.
+                A saved answer captures one moment. An artifact saves the method
+                that produced it: which data to use, what to calculate, and
+                which inputs can change. Review it, refine it when needed, and
+                use it again with fresh data.
               </p>
-
-              <ul className="report-benefits">
-                <li>
-                  <div>
-                    <strong>Ask for the answer you need</strong>
-                    <p>
-                      Describe the business question in plain language and
-                      refine the result with AI.
-                    </p>
-                  </div>
-                </li>
-                <li>
-                  <div>
-                    <strong>Keep it useful</strong>
-                    <p>
-                      Rerun the same answer with fresh data instead of starting
-                      the analysis again.
-                    </p>
-                  </div>
-                </li>
-                <li>
-                  <div>
-                    <strong>Share one clear result</strong>
-                    <p>
-                      Use it in a shared report, a team update, or the next
-                      conversation.
-                    </p>
-                  </div>
-                </li>
-              </ul>
 
               <div className="open-source-proof">
                 <span>Open source</span>
@@ -312,31 +172,131 @@ export default function Home() {
                   Apache 2.0
                 </a>
                 <span aria-hidden="true" />
-                <a href={GITHUB_URL} target="_blank" rel="noreferrer">
-                  View source on GitHub
+                <a
+                  className="github-link"
+                  href={GITHUB_URL}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <img
+                    className="github-icon"
+                    src="/GitHub_Invertocat_Black.svg"
+                    alt=""
+                    width="98"
+                    height="96"
+                  />
+                  <span>View source on GitHub</span>
                 </a>
               </div>
             </div>
 
-            <ArtifactComposition />
+            <ol className="report-benefits" aria-label="How to use Settra">
+              <li>
+                <strong>Connect your data</strong>
+                <p>
+                  Select the spreadsheet files in Google Drive you want Settra
+                  to use.
+                </p>
+              </li>
+              <li>
+                <strong>Create an artifact in chat</strong>
+                <p>
+                  Work with ChatGPT or Claude to define the report and check its
+                  calculations.
+                </p>
+              </li>
+              <li>
+                <strong>Run it again</strong>
+                <p>
+                  Use the saved method when the data or reporting period
+                  changes.
+                </p>
+              </li>
+            </ol>
           </div>
         </section>
 
-        <section className="cta-section">
-          <div className="container cta-card">
-            <h2>Give a useful answer a longer life.</h2>
+        <section className="reuse-section" aria-labelledby="reuse-title">
+          <div className="container reuse-copy">
+            <h2 id="reuse-title">One artifact. More ways to use it.</h2>
             <p>
-              Start with one business question. Save the answer, rerun it as the
-              data changes, and build from there.
+              Use artifacts in ChatGPT or Claude today. We’re building toward
+              combining them into web dashboards and delivering selected results
+              through Slack, Microsoft Teams, and email. The same saved method
+              behind every view.
+            </p>
+          </div>
+          <figure className="container workflow-figure">
+            <a
+              className="workflow-graphic"
+              href="/graphic-canvas.svg"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img
+                src="/graphic-canvas.svg"
+                alt="A question in chat becomes a saved revenue artifact, which can feed a dashboard, an email, and a Teams message. Open the full-size diagram."
+                width="1144"
+                height="536"
+                loading="lazy"
+                decoding="async"
+              />
+            </a>
+          </figure>
+        </section>
+
+        <section
+          className="cta-section"
+          id="design-partners"
+          aria-labelledby="partner-title"
+        >
+          <div className="container cta-card">
+            <h2 id="partner-title">Help shape Settra around a real report.</h2>
+            <p>
+              Do you prepare a weekly or monthly report from spreadsheets? I’m
+              looking for a few people to help shape Settra around that work.
+              We’ll start with a conversation about your process. If there’s a
+              fit, we can try building one reusable artifact together and see
+              what helps, and what still needs work.
             </p>
             <div className="cta-actions">
-              <a className="button button-inverse" href={`${APP_URL}/register`}>
-                Start building <span aria-hidden="true">→</span>
+              <a className="button button-inverse" href={DESIGN_PARTNER_URL}>
+                Tell me about your report <span aria-hidden="true">→</span>
               </a>
               <a className="cta-login" href={`${APP_URL}/login`}>
                 Already using Settra? Sign in
               </a>
             </div>
+          </div>
+        </section>
+
+        <section className="faq-section" aria-labelledby="faq-title">
+          <div className="container faq-inner">
+            <h2 id="faq-title">Frequently asked questions</h2>
+            <details>
+              <summary>
+                <ChevronIcon />
+                <span>Where do I use Settra?</span>
+              </summary>
+              <p>
+                In ChatGPT or Claude, connected to Settra through MCP. There’s
+                no built-in chat interface yet. The{" "}
+                <a href="/connect">connection guide</a> explains the setup and
+                account requirements.
+              </p>
+            </details>
+            <details>
+              <summary>
+                <ChevronIcon />
+                <span>What does an artifact save?</span>
+              </summary>
+              <p>
+                A definition of how to produce a result from your data.
+                Artifacts are stored as YAML, with the sources, calculation
+                rules, and inputs needed to run them again. Each run produces a
+                new result.
+              </p>
+            </details>
           </div>
         </section>
       </main>
@@ -358,10 +318,10 @@ export default function Home() {
               width="568"
               height="160"
             />
-            <p>Reusable answers from your data.</p>
+            <p>Save the method. Rerun the report.</p>
           </div>
           <nav aria-label="Footer navigation">
-            <a href="/connect">Connect</a>
+            <a href="/connect">Connect your AI</a>
             <a href="/support">Support</a>
             <a href={GITHUB_URL} target="_blank" rel="noreferrer">
               GitHub

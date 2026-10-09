@@ -18,7 +18,7 @@ export const metadata: Metadata = {
         url: "/og-data-artifacts.png",
         width: 1200,
         height: 630,
-        alt: "Settra — reusable data artifacts from AI answers",
+        alt: "Settra - save the method behind your reports",
       },
     ],
   },

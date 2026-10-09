@@ -3,9 +3,9 @@ import "./globals.css";
 
 const SITE_URL = "https://www.settra.io";
 const GOOGLE_TAG_ID = "G-6JDD6KVW4W";
-const TITLE = "Settra - Reusable reports from spreadsheet data";
+const TITLE = "Settra - Define once. Reuse across your work.";
 const DESCRIPTION =
-  "Use ChatGPT or Claude to create reusable data artifacts from spreadsheets. Save the method behind a report and run it again with fresh data.";
+  "Create and manage reusable data artifacts with ChatGPT or Claude. Keep one definition for each calculation and rerun it with fresh spreadsheet data.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -22,6 +22,7 @@ export const metadata: Metadata = {
   category: "technology",
   keywords: [
     "reusable data artifacts",
+    "managed data artifacts",
     "AI data artifacts",
     "recurring spreadsheet reports",
     "repeatable data analysis",

@@ -21,12 +21,11 @@ export default function Home() {
       <main id="top">
         <section className="hero">
           <div className="container hero-inner">
-            <h1>Save the method behind your reports.</h1>
+            <h1>Define it once. Reuse it across your work.</h1>
             <p className="hero-copy">
-              Use ChatGPT or Claude to turn your Google Sheets and spreadsheet
-              files into reusable data artifacts. Keep the sources,
-              calculations, and rules together, then rerun them when the data
-              changes.
+              Turn calculations and reports into reusable data artifacts,
+              managed together in Settra. Create and run them in ChatGPT or
+              Claude today using your Google Sheets and spreadsheet files.
             </p>
             <div className="hero-actions">
               <a className="button" href="/contact">
@@ -46,12 +45,15 @@ export default function Home() {
         >
           <div className="container report-grid">
             <div className="report-copy">
-              <h2 id="report-title">Keep how the answer was made.</h2>
+              <h2 id="report-title">
+                One source of truth for your calculations.
+              </h2>
               <p>
-                A saved answer captures one moment. An artifact saves the method
-                that produced it: which data to use, what to calculate, and
-                which inputs can change. Review it, refine it when needed, and
-                use it again with fresh data.
+                Each artifact keeps the sources, calculations, rules, and inputs
+                behind a result in one maintained definition. Review and refine
+                that definition in Settra, then reuse it with fresh data or
+                different inputs. Your collection grows with the metrics and
+                reports you need.
               </p>
 
               <div className="open-source-proof">
@@ -92,17 +94,17 @@ export default function Home() {
                 </p>
               </li>
               <li>
-                <strong>Create an artifact in chat</strong>
+                <strong>Define an artifact</strong>
                 <p>
-                  Work with ChatGPT or Claude to define the report and check its
-                  calculations.
+                  Work with ChatGPT or Claude to set its sources, calculations,
+                  and inputs, then check the result.
                 </p>
               </li>
               <li>
-                <strong>Run it again</strong>
+                <strong>Build your collection</strong>
                 <p>
-                  Use the saved method when the data or reporting period
-                  changes.
+                  Save artifacts for the metrics and reports you need. Find and
+                  rerun them as your data or inputs change.
                 </p>
               </li>
             </ol>
@@ -113,10 +115,14 @@ export default function Home() {
           <div className="container reuse-copy">
             <h2 id="reuse-title">One artifact. More ways to use it.</h2>
             <p>
-              Use artifacts in ChatGPT or Claude today. We’re building toward
-              combining them into web dashboards and delivering selected results
-              through Slack, Microsoft Teams, and email. The same saved method
-              behind every view.
+              The goal is to reuse the same artifacts wherever results are
+              needed, with no separate calculation logic to maintain for each
+              destination.
+            </p>
+            <p>
+              Use them in ChatGPT or Claude today. We’re building toward
+              composing web dashboards from multiple artifacts and delivering
+              selected results through Slack, Microsoft Teams, and email.
             </p>
           </div>
           <figure className="container workflow-figure">
@@ -146,11 +152,10 @@ export default function Home() {
           <div className="container cta-card">
             <h2 id="partner-title">Help shape Settra around a real report.</h2>
             <p>
-              Do you prepare a weekly or monthly report from spreadsheets? I’m
-              looking for a few people to help shape Settra around that work.
-              We’ll start with a conversation about your process. If there’s a
-              fit, we can try building one reusable artifact together and see
-              what helps, and what still needs work.
+              Do the same calculations end up in several reports or updates? I’m
+              looking for people working from spreadsheets to help shape Settra
+              around that work. We’ll start with a conversation about your
+              process, then try one reusable artifact together if there’s a fit.
             </p>
             <div className="cta-actions">
               <a className="button button-inverse" href="/contact">
@@ -190,12 +195,25 @@ export default function Home() {
                 new result.
               </p>
             </details>
+            <details>
+              <summary>
+                <ChevronIcon />
+                <span>What does “one source of truth” mean?</span>
+              </summary>
+              <p>
+                One maintained definition for each calculation or report. The
+                goal is for every use of an artifact to rely on that definition,
+                so you don’t have to recreate its logic for each destination.
+                Different data, filters, or reporting periods can produce
+                different results while using the same definition.
+              </p>
+            </details>
           </div>
         </section>
       </main>
 
       <footer className="site-footer">
-        <div className="container footer-inner">
+        <div className="footer-inner">
           <div>
             <img
               className="logo footer-logo logo-light"
@@ -211,7 +229,7 @@ export default function Home() {
               width="568"
               height="160"
             />
-            <p>Save the method. Rerun the report.</p>
+            <p>Define once. Reuse across your work.</p>
           </div>
           <nav aria-label="Footer navigation">
             <a href="/connect">Connect your AI</a>

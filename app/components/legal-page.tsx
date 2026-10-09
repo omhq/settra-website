@@ -42,7 +42,7 @@ export function LegalPage({
       </main>
 
       <footer className="site-footer">
-        <div className="container footer-inner">
+        <div className="footer-inner">
           <div>
             <img
               className="logo footer-logo logo-light"
@@ -58,7 +58,7 @@ export function LegalPage({
               width="568"
               height="160"
             />
-            <p>Save the method. Rerun the report.</p>
+            <p>Define once. Reuse across your work.</p>
           </div>
           <nav aria-label="Legal navigation">
             <a href="/connect">Connect your AI</a>
